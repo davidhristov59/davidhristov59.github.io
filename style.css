@@ -1,0 +1,595 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins,sans-serif;
+}
+
+/*----------------home--------------------------*/
+
+body{
+    background: url("./images/alexandre-debieve-FO7JIlwjOtU-unsplash.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;
+}
+
+.container{
+    padding: 10px 10%;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo{
+    width: 250px;
+    margin-left: -80px;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::after{
+    content: ' ';
+    width: 0;
+    height: 4px;
+    background: #d5d590;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after{
+    width: 100%;
+}
+
+.header-text{
+    margin-top: 40px;
+    font-size: 30px;
+}
+
+.header-text h1{
+    font-size: 50px;
+    margin-top: 50px;
+}
+
+.header-text h1 span{
+    color: darksalmon;
+
+}
+
+/*----------------------about--------------------------*/
+
+.bodyy{
+    background: url("./images/jeremy-bishop.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;
+    font-family: Poppins,sans-serif;
+}
+
+#about{
+    padding: 80px 0;
+    color: #ababab;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-col{
+    flex-basis: 35%;
+}
+
+.about-col img{
+    width: 80%;
+    height: 90%;
+    border-radius: 10px;
+
+}
+
+.about-col2{
+    flex-basis: 65%;
+}
+
+.about-col2 p{
+    line-height: 25px;
+}
+
+.granki{
+    color: darksalmon;
+}
+
+.prog-jazici{
+    color: burlywood;
+
+}
+
+#pozicija{
+    color: #c48c8c;
+
+}
+
+.sub-title{
+    font-size: 40px;
+    font-weight: 600;
+    color: white;
+    border-style: outset;
+    padding: 5px;
+    margin-right: 450px;
+    margin-bottom: 30px;
+}
+
+.finki{
+    color: cadetblue;
+    font-weight: bold;
+}
+
+/*-------------------------------------------*/
+
+/*.tab-titles{*/
+/*    display: inline-block;*/
+/*    margin: 20px 0 40px;*/
+/*}*/
+
+/*.tab-links{*/
+/*    margin-right: 50px;*/
+/*    font-size: 18px;*/
+/*    font-weight: 500;*/
+/*    cursor: pointer;*/
+/*    display: inline-block;*/
+/*}*/
+
+/*.tab-links::after{*/
+/*    content: '';*/
+/*    width: 0;*/
+/*    height: 3px;*/
+/*    background: #ff004f;*/
+/*    position: absolute;*/
+/*    left: 480px;*/
+/*    bottom: 60px;*/
+/*    transition: 0.5s;*/
+/*}*/
+
+/*.tab-links.active-link::after{*/
+/*    width: 5%;*/
+/*}*/
+
+/*--------------------travel------------------*/
+.body4{
+    background: url("./images/pexels.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;
+    font-family: Poppins,sans-serif;
+}
+
+.travel{
+    display: flex;
+    flex-direction: row;
+}
+
+.travel-title{
+    width: 90vw;
+    background: url(./images/dallas1.jpg) left / cover no-repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(0, 0, 0, 0.25);
+    font-size: 50px;
+    margin-left: 630px;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+.medium{
+    font-weight: 500;
+}
+
+/*.kufer img{*/
+/*    width: 80%;*/
+/*    position: relative;*/
+/*    right: 490px;*/
+/*    top: 50px;*/
+/*}*/
+
+
+.rome{
+    background: url("./images/rim.jpg") center / cover no-repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(0, 0, 0, 0.25);
+    position: relative;
+    left: 100px;
+    top: -150px;
+}
+
+.section h2{
+    font-weight: bold;
+    line-height: 150%;
+    margin: 0;
+    font-size: 35px;
+}
+
+.scroll .photo{
+    width: 30%;
+    position: relative;
+    left: 20px;
+    top: -120px;
+    border-radius: 5px;
+}
+
+.malta{
+    background: url("./images/malta.jpg") center / cover no-repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(0, 0, 0, 0.25);
+    position: relative;
+    left: 810px;
+    top: -220px;
+}
+
+.section2 h2{
+    font-weight: bold;
+    line-height: 150%;
+    margin: 0;
+    font-size: 35px;
+}
+
+.scroll2 .photo2{
+    width: 30%;
+    position: relative;
+    left: 760px;
+    top: -200px;
+    border-radius: 5px;
+}
+
+
+.turkey{
+    background: url("./images/istanbul.jpg") center / cover no-repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(0, 0, 0, 0.25);
+    position: relative;
+    left: 120px;
+    top: -220px;
+}
+
+.section3 h2{
+    font-weight: bold;
+    line-height: 150%;
+    margin: 0;
+    font-size: 35px;
+}
+
+.scroll3 .photo3{
+    width: 30%;
+    position: relative;
+    left: 60px;
+    top: -189px;
+    border-radius: 5px;
+}
+
+.ceska{
+    background: url("./images/praga.jpg") center / cover no-repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(0, 0, 0, 0.25);
+    position: relative;
+    left: 810px;
+    top: -270px;
+}
+
+.section4 h2{
+    font-weight: bold;
+    line-height: 150%;
+    margin: 0;
+    font-size: 35px;
+}
+
+.scroll4 .photo4{
+    width: 30%;
+    position: relative;
+    left: 840px;
+    top: -240px;
+    border-radius: 5px;
+}
+
+
+.grcija{
+    background: url("./images/solun.jpg") center / cover no-repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(0, 0, 0, 0.25);
+    position: relative;
+    left: 130px;
+    top: -230px;
+}
+
+.section5 h2{
+    font-weight: bold;
+    line-height: 150%;
+    margin: 0;
+    font-size: 35px;
+}
+
+.scroll5 .photo5{
+    height: 420px;
+    position: relative;
+    left: 150px;
+    top: -210px;
+    border-radius: 5px;
+
+}
+
+.ohrid{
+    background: url("./images/ohrid.jpg") center / cover no-repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(0, 0, 0, 0.25);
+    position: relative;
+    left: 810px;
+    top: -550px;
+}
+
+.section6 h2{
+    font-weight: bold;
+    line-height: 150%;
+    margin: 0;
+    font-size: 35px;
+}
+
+.scroll6 .photo6{
+    width: 38%;
+    position: relative;
+    left: 770px;
+    top: -510px;
+    border-radius: 5px;
+}
+
+
+/*-------------------contact------------------*/
+
+.body2{
+    background: url("./images/pexels2.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;
+    font-family: Poppins,sans-serif;
+}
+
+.contact-left{
+    flex-basis: 35%;
+
+}
+
+.contact-right{
+    flex-basis: 60%;
+
+}
+
+.icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color:#ababab ;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+
+
+.icons a:hover{
+    color: #ff004f;
+    transform: translateY(-5px);
+}
+
+.btn.btn2{
+    display: inline-block;
+    background: #ff004f;
+    padding: 10px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-right form{
+    width: 100%;
+
+}
+
+form input, form textarea{
+    width: 60%;
+    height: 60%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius:6px;
+    float: right;
+    margin-right: 100px;
+
+}
+
+.copyright{
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background: #262626;
+    font-weight: 300;
+    margin-top: 20px;
+    position: relative;
+    bottom: -44px;
+}
+
+.contact-right form button{
+    position: relative;
+    top: 400px;
+    left: 390px;
+}
+
+/*.sub-title{*/
+/*    font-size: 40px;*/
+/*    font-weight: 600;*/
+/*    color: white;*/
+/*    border-style: outset;*/
+/*    padding: 5px;*/
+/*    margin-right: 450px;*/
+/*    margin-bottom: 30px;*/
+/*}*/
+
+.sub-title2{
+    margin-left: 180px;
+    margin-top: 16px;
+    font-size: 40px;
+    font-weight: 600;
+    color: #eaeaea;
+    border: 5px ridge black;
+   padding: 5px 10px 5px 10px;
+
+}
+
+.icons .icon-facebook{
+    color: white;
+    position: relative;
+    top: 120px;
+    left: 230px;
+
+}
+
+.icons .icon-github{
+    color: white;
+    position: relative;
+    top: 120px;
+    left: 250px;
+
+}
+
+.icons .icon-linkedin{
+    color: white;
+    position: relative;
+    top: 120px;
+    left: 270px;
+}
+
+.icon-linkedin ion-icon, .icon-facebook ion-icon, .icon-github ion-icon{
+    font-size: 60px;
+}
+
+
+.contact-left .icon-email{
+    color: white;
+    padding-right: 10px;
+}
+
+.contact-left p{
+    margin-top: 50px;
+    margin-left: 100px;
+    padding-left: 2px;
+    font-size: 23px;
+}
+
+.contact-left a{
+    text-decoration: none;
+    color: white;
+
+}
+
+.contact-left .icon-email {
+    /*padding-left: 150px;*/
+    position: relative;
+    top: 30px;
+    left: 180px;
+    font-size: 19px;
+}
+
+.contact-left .icon-phone {
+    /*padding-left: 150px;*/
+    position: relative;
+    top: 80px;
+    left: -110px;
+    font-size: 22px;
+}
+
+/*.contact-left a:hover{*/
+/*    color: black;*/
+/*    transform: translateY(-5px);*/
+/*}*/
+
+/*.contact-left p:hover{*/
+/*    color: black;*/
+/*    transform: translateY(-5px);*/
+/*}*/
+
+
+/*-------------------portfolio------------------*/
+
+.body3{
+    background: url("./images/sah3.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;
+    font-family: Poppins,sans-serif;
+}
+
+#services{
+    padding: 30px 0;
+}
+
+/*.sub-title{*/
+/*    font-size: 40px;*/
+/*    font-weight: 600;*/
+/*    color: white;*/
+/*    border-style: outset;*/
+/*    padding: 5px;*/
+/*    margin-right: 450px;*/
+/*    margin-bottom: 30px;*/
+/*}*/
+
+.sub-title3{
+    color: white;
+    font-size: 40px;
+    border-style: outset;
+    padding: 5px 15px 5px 15px;
+    margin-right: 820px;
+    position: relative;
+    left: 20px;
+    top: 20px;
+}
+
+.portfolio-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.portfolio-list div{
+    background: #262626;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-right: 10px;
+    padding-top: 20px;
+
+}
