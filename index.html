@@ -3,782 +3,783 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>David Hristov - Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f8f9fa;
-        }
-
-        /* Navigation */
-        .navbar {
-            background: #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 1rem 0;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #2c3e50;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-link {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .nav-link:hover, .nav-link.active {
-            background: #3498db;
-            color: white;
-        }
-
-        /* Mobile menu */
-        .mobile-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .hamburger {
-            width: 25px;
-            height: 3px;
-            background: #333;
-            margin: 3px 0;
-            transition: 0.3s;
-        }
-
-        /* Main content */
-        .main-content {
-            margin-top: 80px;
-            min-height: calc(100vh - 80px);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .page {
-            display: none;
-            animation: fadeIn 0.5s ease-in;
-        }
-
-        .page.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Home page styles */
-        .home-content {
-            display: flex;
-            align-items: center;
-            gap: 3rem;
-            min-height: 70vh;
-            padding: 2rem 0;
-        }
-
-        .profile-section {
-            flex: 1;
-            text-align: center;
-        }
-
-        .profile-image {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            margin: 0 auto 2rem;
-            background: linear-gradient(135deg, #3498db, #2c3e50);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: white;
-            font-weight: bold;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        .intro-section {
-            flex: 1.5;
-        }
-
-        .intro-section h1 {
-            font-size: 3rem;
-            color: #2c3e50;
-            margin-bottom: 1rem;
-        }
-
-        .intro-section h2 {
-            font-size: 1.5rem;
-            color: #3498db;
-            margin-bottom: 2rem;
-            font-weight: normal;
-        }
-
-        .intro-section p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 1.5rem;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: #3498db;
-            color: white;
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 500;
-            transition: background 0.3s ease;
-            margin-right: 1rem;
-            margin-top: 1rem;
-        }
-
-        .cta-button:hover {
-            background: #2980b9;
-        }
-
-        .cta-button.secondary {
-            background: transparent;
-            color: #3498db;
-            border: 2px solid #3498db;
-        }
-
-        .cta-button.secondary:hover {
-            background: #3498db;
-            color: white;
-        }
-
-        /* Section styles */
-        .section-title {
-            font-size: 2.5rem;
-            color: #2c3e50;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        /* About page */
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .about-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 2rem;
-            text-align: justify;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .skill-category {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-        }
-
-        .skill-category h3 {
-            color: #3498db;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .skill-tag {
-            background: #ecf0f1;
-            color: #2c3e50;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .skill-tag:hover {
-            background: #3498db;
-            color: white;
-        }
-
-        /* Experience page */
-        .experience-item {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            margin-bottom: 2rem;
-            border-left: 4px solid #3498db;
-        }
-
-        .job-title {
-            font-size: 1.5rem;
-            color: #2c3e50;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .company {
-            font-size: 1.2rem;
-            color: #3498db;
-            margin-bottom: 0.5rem;
-        }
-
-        .duration {
-            color: #7f8c8d;
-            font-style: italic;
-            margin-bottom: 1rem;
-        }
-
-        .job-description {
-            color: #555;
-            line-height: 1.6;
-        }
-
-        .job-description ul {
-            margin-left: 1.5rem;
-        }
-
-        .job-description li {
-            margin-bottom: 0.5rem;
-        }
-
-        .tech-stack {
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid #ecf0f1;
-        }
-
-        .tech-stack strong {
-            color: #2c3e50;
-        }
-
-        /* Projects page */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-
-        .project-title {
-            font-size: 1.4rem;
-            color: #2c3e50;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .project-title a {
-            color: #3498db;
-            text-decoration: none;
-        }
-
-        .project-title a:hover {
-            text-decoration: underline;
-        }
-
-        .project-tech {
-            color: #7f8c8d;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            font-style: italic;
-        }
-
-        .project-description {
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        .project-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .project-link {
-            color: #3498db;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-        }
-
-        .project-link:hover {
-            text-decoration: underline;
-        }
-
-        /* Contact info */
-        .contact-info {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            text-align: center;
-            max-width: 600px;
-            margin: 2rem auto 0;
-        }
-
-        .contact-item {
-            display: inline-block;
-            margin: 0.5rem 1rem;
-            color: #3498db;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .contact-item:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-menu {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 70px);
-                background: white;
-                flex-direction: column;
-                justify-content: start;
-                align-items: center;
-                padding-top: 2rem;
-                transition: left 0.3s ease;
-                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .mobile-toggle {
-                display: flex;
-            }
-
-            .home-content {
-                flex-direction: column;
-                text-align: center;
-                gap: 2rem;
-            }
-
-            .intro-section h1 {
-                font-size: 2.5rem;
-            }
-
-            .profile-image {
-                width: 200px;
-                height: 200px;
-                font-size: 3rem;
-            }
-
-            .container {
-                padding: 1rem;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <title>Under construction</title>
+<!--    <style>-->
+<!--        * {-->
+<!--            margin: 0;-->
+<!--            padding: 0;-->
+<!--            box-sizing: border-box;-->
+<!--        }-->
+
+<!--        body {-->
+<!--            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;-->
+<!--            line-height: 1.6;-->
+<!--            color: #333;-->
+<!--            background: #f8f9fa;-->
+<!--        }-->
+
+<!--        /* Navigation */-->
+<!--        .navbar {-->
+<!--            background: #fff;-->
+<!--            box-shadow: 0 2px 10px rgba(0,0,0,0.1);-->
+<!--            position: fixed;-->
+<!--            top: 0;-->
+<!--            width: 100%;-->
+<!--            z-index: 1000;-->
+<!--            padding: 1rem 0;-->
+<!--        }-->
+
+<!--        .nav-container {-->
+<!--            max-width: 1200px;-->
+<!--            margin: 0 auto;-->
+<!--            padding: 0 2rem;-->
+<!--            display: flex;-->
+<!--            justify-content: space-between;-->
+<!--            align-items: center;-->
+<!--        }-->
+
+<!--        .logo {-->
+<!--            font-size: 1.5rem;-->
+<!--            font-weight: bold;-->
+<!--            color: #2c3e50;-->
+<!--        }-->
+
+<!--        .nav-menu {-->
+<!--            display: flex;-->
+<!--            list-style: none;-->
+<!--            gap: 2rem;-->
+<!--        }-->
+
+<!--        .nav-link {-->
+<!--            text-decoration: none;-->
+<!--            color: #333;-->
+<!--            font-weight: 500;-->
+<!--            padding: 0.5rem 1rem;-->
+<!--            border-radius: 5px;-->
+<!--            transition: all 0.3s ease;-->
+<!--            cursor: pointer;-->
+<!--        }-->
+
+<!--        .nav-link:hover, .nav-link.active {-->
+<!--            background: #3498db;-->
+<!--            color: white;-->
+<!--        }-->
+
+<!--        /* Mobile menu */-->
+<!--        .mobile-toggle {-->
+<!--            display: none;-->
+<!--            flex-direction: column;-->
+<!--            cursor: pointer;-->
+<!--        }-->
+
+<!--        .hamburger {-->
+<!--            width: 25px;-->
+<!--            height: 3px;-->
+<!--            background: #333;-->
+<!--            margin: 3px 0;-->
+<!--            transition: 0.3s;-->
+<!--        }-->
+
+<!--        /* Main content */-->
+<!--        .main-content {-->
+<!--            margin-top: 80px;-->
+<!--            min-height: calc(100vh - 80px);-->
+<!--        }-->
+
+<!--        .container {-->
+<!--            max-width: 1200px;-->
+<!--            margin: 0 auto;-->
+<!--            padding: 2rem;-->
+<!--        }-->
+
+<!--        .page {-->
+<!--            display: none;-->
+<!--            animation: fadeIn 0.5s ease-in;-->
+<!--        }-->
+
+<!--        .page.active {-->
+<!--            display: block;-->
+<!--        }-->
+
+<!--        @keyframes fadeIn {-->
+<!--            from { opacity: 0; transform: translateY(20px); }-->
+<!--            to { opacity: 1; transform: translateY(0); }-->
+<!--        }-->
+
+<!--        /* Home page styles */-->
+<!--        .home-content {-->
+<!--            display: flex;-->
+<!--            align-items: center;-->
+<!--            gap: 3rem;-->
+<!--            min-height: 70vh;-->
+<!--            padding: 2rem 0;-->
+<!--        }-->
+
+<!--        .profile-section {-->
+<!--            flex: 1;-->
+<!--            text-align: center;-->
+<!--        }-->
+
+<!--        .profile-image {-->
+<!--            width: 250px;-->
+<!--            height: 250px;-->
+<!--            border-radius: 50%;-->
+<!--            margin: 0 auto 2rem;-->
+<!--            background: linear-gradient(135deg, #3498db, #2c3e50);-->
+<!--            display: flex;-->
+<!--            align-items: center;-->
+<!--            justify-content: center;-->
+<!--            font-size: 4rem;-->
+<!--            color: white;-->
+<!--            font-weight: bold;-->
+<!--            box-shadow: 0 10px 30px rgba(0,0,0,0.2);-->
+<!--        }-->
+
+<!--        .intro-section {-->
+<!--            flex: 1.5;-->
+<!--        }-->
+
+<!--        .intro-section h1 {-->
+<!--            font-size: 3rem;-->
+<!--            color: #2c3e50;-->
+<!--            margin-bottom: 1rem;-->
+<!--        }-->
+
+<!--        .intro-section h2 {-->
+<!--            font-size: 1.5rem;-->
+<!--            color: #3498db;-->
+<!--            margin-bottom: 2rem;-->
+<!--            font-weight: normal;-->
+<!--        }-->
+
+<!--        .intro-section p {-->
+<!--            font-size: 1.1rem;-->
+<!--            line-height: 1.8;-->
+<!--            color: #555;-->
+<!--            margin-bottom: 1.5rem;-->
+<!--        }-->
+
+<!--        .cta-button {-->
+<!--            display: inline-block;-->
+<!--            background: #3498db;-->
+<!--            color: white;-->
+<!--            padding: 1rem 2rem;-->
+<!--            text-decoration: none;-->
+<!--            border-radius: 5px;-->
+<!--            font-weight: 500;-->
+<!--            transition: background 0.3s ease;-->
+<!--            margin-right: 1rem;-->
+<!--            margin-top: 1rem;-->
+<!--        }-->
+
+<!--        .cta-button:hover {-->
+<!--            background: #2980b9;-->
+<!--        }-->
+
+<!--        .cta-button.secondary {-->
+<!--            background: transparent;-->
+<!--            color: #3498db;-->
+<!--            border: 2px solid #3498db;-->
+<!--        }-->
+
+<!--        .cta-button.secondary:hover {-->
+<!--            background: #3498db;-->
+<!--            color: white;-->
+<!--        }-->
+
+<!--        /* Section styles */-->
+<!--        .section-title {-->
+<!--            font-size: 2.5rem;-->
+<!--            color: #2c3e50;-->
+<!--            margin-bottom: 2rem;-->
+<!--            text-align: center;-->
+<!--        }-->
+
+<!--        /* About page */-->
+<!--        .about-content {-->
+<!--            max-width: 800px;-->
+<!--            margin: 0 auto;-->
+<!--        }-->
+
+<!--        .about-text {-->
+<!--            font-size: 1.1rem;-->
+<!--            line-height: 1.8;-->
+<!--            color: #555;-->
+<!--            margin-bottom: 2rem;-->
+<!--            text-align: justify;-->
+<!--        }-->
+
+<!--        .skills-grid {-->
+<!--            display: grid;-->
+<!--            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));-->
+<!--            gap: 2rem;-->
+<!--            margin-top: 3rem;-->
+<!--        }-->
+
+<!--        .skill-category {-->
+<!--            background: white;-->
+<!--            padding: 2rem;-->
+<!--            border-radius: 10px;-->
+<!--            box-shadow: 0 5px 15px rgba(0,0,0,0.08);-->
+<!--        }-->
+
+<!--        .skill-category h3 {-->
+<!--            color: #3498db;-->
+<!--            margin-bottom: 1rem;-->
+<!--            font-size: 1.3rem;-->
+<!--        }-->
+
+<!--        .skill-tags {-->
+<!--            display: flex;-->
+<!--            flex-wrap: wrap;-->
+<!--            gap: 0.5rem;-->
+<!--        }-->
+
+<!--        .skill-tag {-->
+<!--            background: #ecf0f1;-->
+<!--            color: #2c3e50;-->
+<!--            padding: 0.5rem 1rem;-->
+<!--            border-radius: 20px;-->
+<!--            font-size: 0.9rem;-->
+<!--            transition: all 0.3s ease;-->
+<!--        }-->
+
+<!--        .skill-tag:hover {-->
+<!--            background: #3498db;-->
+<!--            color: white;-->
+<!--        }-->
+
+<!--        /* Experience page */-->
+<!--        .experience-item {-->
+<!--            background: white;-->
+<!--            padding: 2rem;-->
+<!--            border-radius: 10px;-->
+<!--            box-shadow: 0 5px 15px rgba(0,0,0,0.08);-->
+<!--            margin-bottom: 2rem;-->
+<!--            border-left: 4px solid #3498db;-->
+<!--        }-->
+
+<!--        .job-title {-->
+<!--            font-size: 1.5rem;-->
+<!--            color: #2c3e50;-->
+<!--            font-weight: 600;-->
+<!--            margin-bottom: 0.5rem;-->
+<!--        }-->
+
+<!--        .company {-->
+<!--            font-size: 1.2rem;-->
+<!--            color: #3498db;-->
+<!--            margin-bottom: 0.5rem;-->
+<!--        }-->
+
+<!--        .duration {-->
+<!--            color: #7f8c8d;-->
+<!--            font-style: italic;-->
+<!--            margin-bottom: 1rem;-->
+<!--        }-->
+
+<!--        .job-description {-->
+<!--            color: #555;-->
+<!--            line-height: 1.6;-->
+<!--        }-->
+
+<!--        .job-description ul {-->
+<!--            margin-left: 1.5rem;-->
+<!--        }-->
+
+<!--        .job-description li {-->
+<!--            margin-bottom: 0.5rem;-->
+<!--        }-->
+
+<!--        .tech-stack {-->
+<!--            margin-top: 1rem;-->
+<!--            padding-top: 1rem;-->
+<!--            border-top: 1px solid #ecf0f1;-->
+<!--        }-->
+
+<!--        .tech-stack strong {-->
+<!--            color: #2c3e50;-->
+<!--        }-->
+
+<!--        /* Projects page */-->
+<!--        .projects-grid {-->
+<!--            display: grid;-->
+<!--            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));-->
+<!--            gap: 2rem;-->
+<!--        }-->
+
+<!--        .project-card {-->
+<!--            background: white;-->
+<!--            padding: 2rem;-->
+<!--            border-radius: 10px;-->
+<!--            box-shadow: 0 5px 15px rgba(0,0,0,0.08);-->
+<!--            transition: transform 0.3s ease, box-shadow 0.3s ease;-->
+<!--        }-->
+
+<!--        .project-card:hover {-->
+<!--            transform: translateY(-5px);-->
+<!--            box-shadow: 0 10px 25px rgba(0,0,0,0.15);-->
+<!--        }-->
+
+<!--        .project-title {-->
+<!--            font-size: 1.4rem;-->
+<!--            color: #2c3e50;-->
+<!--            margin-bottom: 1rem;-->
+<!--            font-weight: 600;-->
+<!--        }-->
+
+<!--        .project-title a {-->
+<!--            color: #3498db;-->
+<!--            text-decoration: none;-->
+<!--        }-->
+
+<!--        .project-title a:hover {-->
+<!--            text-decoration: underline;-->
+<!--        }-->
+
+<!--        .project-tech {-->
+<!--            color: #7f8c8d;-->
+<!--            font-size: 0.9rem;-->
+<!--            margin-bottom: 1rem;-->
+<!--            font-style: italic;-->
+<!--        }-->
+
+<!--        .project-description {-->
+<!--            color: #555;-->
+<!--            line-height: 1.6;-->
+<!--            margin-bottom: 1rem;-->
+<!--        }-->
+
+<!--        .project-links {-->
+<!--            display: flex;-->
+<!--            gap: 1rem;-->
+<!--            margin-top: 1rem;-->
+<!--        }-->
+
+<!--        .project-link {-->
+<!--            color: #3498db;-->
+<!--            text-decoration: none;-->
+<!--            font-weight: 500;-->
+<!--            font-size: 0.9rem;-->
+<!--        }-->
+
+<!--        .project-link:hover {-->
+<!--            text-decoration: underline;-->
+<!--        }-->
+
+<!--        /* Contact info */-->
+<!--        .contact-info {-->
+<!--            background: white;-->
+<!--            padding: 2rem;-->
+<!--            border-radius: 10px;-->
+<!--            box-shadow: 0 5px 15px rgba(0,0,0,0.08);-->
+<!--            text-align: center;-->
+<!--            max-width: 600px;-->
+<!--            margin: 2rem auto 0;-->
+<!--        }-->
+
+<!--        .contact-item {-->
+<!--            display: inline-block;-->
+<!--            margin: 0.5rem 1rem;-->
+<!--            color: #3498db;-->
+<!--            text-decoration: none;-->
+<!--            font-weight: 500;-->
+<!--        }-->
+
+<!--        .contact-item:hover {-->
+<!--            text-decoration: underline;-->
+<!--        }-->
+
+<!--        /* Responsive */-->
+<!--        @media (max-width: 768px) {-->
+<!--            .nav-menu {-->
+<!--                position: fixed;-->
+<!--                top: 70px;-->
+<!--                left: -100%;-->
+<!--                width: 100%;-->
+<!--                height: calc(100vh - 70px);-->
+<!--                background: white;-->
+<!--                flex-direction: column;-->
+<!--                justify-content: start;-->
+<!--                align-items: center;-->
+<!--                padding-top: 2rem;-->
+<!--                transition: left 0.3s ease;-->
+<!--                box-shadow: 0 2px 10px rgba(0,0,0,0.1);-->
+<!--            }-->
+
+<!--            .nav-menu.active {-->
+<!--                left: 0;-->
+<!--            }-->
+
+<!--            .mobile-toggle {-->
+<!--                display: flex;-->
+<!--            }-->
+
+<!--            .home-content {-->
+<!--                flex-direction: column;-->
+<!--                text-align: center;-->
+<!--                gap: 2rem;-->
+<!--            }-->
+
+<!--            .intro-section h1 {-->
+<!--                font-size: 2.5rem;-->
+<!--            }-->
+
+<!--            .profile-image {-->
+<!--                width: 200px;-->
+<!--                height: 200px;-->
+<!--                font-size: 3rem;-->
+<!--            }-->
+
+<!--            .container {-->
+<!--                padding: 1rem;-->
+<!--            }-->
+
+<!--            .projects-grid {-->
+<!--                grid-template-columns: 1fr;-->
+<!--            }-->
+
+<!--            .skills-grid {-->
+<!--                grid-template-columns: 1fr;-->
+<!--            }-->
+<!--        }-->
+<!--    </style>-->
 </head>
-<body>
-<!-- Navigation -->
-<nav class="navbar">
-    <div class="nav-container">
-        <div class="logo">David Hristov</div>
-        <ul class="nav-menu" id="nav-menu">
-            <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
-            <li><a href="#" class="nav-link" data-page="about">About Me</a></li>
-            <li><a href="#" class="nav-link" data-page="experience">Experience</a></li>
-            <li><a href="#" class="nav-link" data-page="projects">Projects</a></li>
-        </ul>
-        <div class="mobile-toggle" id="mobile-toggle">
-            <div class="hamburger"></div>
-            <div class="hamburger"></div>
-            <div class="hamburger"></div>
-        </div>
-    </div>
-</nav>
+<h1>UNDER CONSTRUCTION</h1>
+<!--<body>-->
+<!--&lt;!&ndash; Navigation &ndash;&gt;-->
+<!--<nav class="navbar">-->
+<!--    <div class="nav-container">-->
+<!--        <div class="logo">David Hristov</div>-->
+<!--        <ul class="nav-menu" id="nav-menu">-->
+<!--            <li><a href="#" class="nav-link active" data-page="home">Home</a></li>-->
+<!--            <li><a href="#" class="nav-link" data-page="about">About Me</a></li>-->
+<!--            <li><a href="#" class="nav-link" data-page="experience">Experience</a></li>-->
+<!--            <li><a href="#" class="nav-link" data-page="projects">Projects</a></li>-->
+<!--        </ul>-->
+<!--        <div class="mobile-toggle" id="mobile-toggle">-->
+<!--            <div class="hamburger"></div>-->
+<!--            <div class="hamburger"></div>-->
+<!--            <div class="hamburger"></div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</nav>-->
 
-<!-- Main Content -->
-<div class="main-content">
-    <div class="container">
-        <!-- Home Page -->
-        <div class="page active" id="home">
-            <div class="home-content">
-                <div class="profile-section">
-                    <div class="profile-image">DH</div>
-                </div>
-                <div class="intro-section">
-                    <h1>David Hristov</h1>
-                    <h2>Software Engineering Student</h2>
-                    <p>Welcome to my portfolio! I'm a passionate 4th-year Software Engineering student at FCSE-Skopje, specializing in full-stack development, data science, and DevOps practices.</p>
-                    <p>With hands-on experience from my internship at Inteligenta and numerous personal projects, I'm dedicated to building efficient, scalable solutions and continuously learning new technologies.</p>
-                    <a href="#" class="cta-button" data-page="projects">View My Projects</a>
-                    <a href="#" class="cta-button secondary" data-page="about">Learn More About Me</a>
-                </div>
-            </div>
-        </div>
+<!--&lt;!&ndash; Main Content &ndash;&gt;-->
+<!--<div class="main-content">-->
+<!--    <div class="container">-->
+<!--        &lt;!&ndash; Home Page &ndash;&gt;-->
+<!--        <div class="page active" id="home">-->
+<!--            <div class="home-content">-->
+<!--                <div class="profile-section">-->
+<!--                    <div class="profile-image">DH</div>-->
+<!--                </div>-->
+<!--                <div class="intro-section">-->
+<!--                    <h1>David Hristov</h1>-->
+<!--                    <h2>Software Engineering Student</h2>-->
+<!--                    <p>Welcome to my portfolio! I'm a passionate 4th-year Software Engineering student at FCSE-Skopje, specializing in full-stack development, data science, and DevOps practices.</p>-->
+<!--                    <p>With hands-on experience from my internship at Inteligenta and numerous personal projects, I'm dedicated to building efficient, scalable solutions and continuously learning new technologies.</p>-->
+<!--                    <a href="#" class="cta-button" data-page="projects">View My Projects</a>-->
+<!--                    <a href="#" class="cta-button secondary" data-page="about">Learn More About Me</a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
 
-        <!-- About Me Page -->
-        <div class="page" id="about">
-            <h1 class="section-title">About Me</h1>
-            <div class="about-content">
-                <p class="about-text">
-                    I'm an aspiring Software Engineer student eager to leverage strong analytical skills, problem-solving abilities,
-                    and software development knowledge in dynamic projects. Currently in my 4th year at the Faculty of Computer
-                    Science and Engineering in Skopje, I'm passionate about building efficient and scalable solutions across
-                    web development, data science, machine learning, and DevOps practices.
-                </p>
-                <p class="about-text">
-                    I'm experienced in designing and implementing efficient, scalable solutions while working effectively in
-                    collaborative team environments where feedback drives continuous improvement. Quick to adapt and learn new
-                    technologies and frameworks, I've successfully executed complex projects in full-stack development as well
-                    as data-driven applications.
-                </p>
+<!--        &lt;!&ndash; About Me Page &ndash;&gt;-->
+<!--        <div class="page" id="about">-->
+<!--            <h1 class="section-title">About Me</h1>-->
+<!--            <div class="about-content">-->
+<!--                <p class="about-text">-->
+<!--                    I'm an aspiring Software Engineer student eager to leverage strong analytical skills, problem-solving abilities,-->
+<!--                    and software development knowledge in dynamic projects. Currently in my 4th year at the Faculty of Computer-->
+<!--                    Science and Engineering in Skopje, I'm passionate about building efficient and scalable solutions across-->
+<!--                    web development, data science, machine learning, and DevOps practices.-->
+<!--                </p>-->
+<!--                <p class="about-text">-->
+<!--                    I'm experienced in designing and implementing efficient, scalable solutions while working effectively in-->
+<!--                    collaborative team environments where feedback drives continuous improvement. Quick to adapt and learn new-->
+<!--                    technologies and frameworks, I've successfully executed complex projects in full-stack development as well-->
+<!--                    as data-driven applications.-->
+<!--                </p>-->
 
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Programming Languages</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">Java</span>
-                            <span class="skill-tag">C#</span>
-                            <span class="skill-tag">Kotlin</span>
-                            <span class="skill-tag">C++</span>
-                            <span class="skill-tag">JavaScript</span>
-                            <span class="skill-tag">TypeScript</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Frameworks & Tools</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">React</span>
-                            <span class="skill-tag">Spring Boot</span>
-                            <span class="skill-tag">Flask</span>
-                            <span class="skill-tag">Django</span>
-                            <span class="skill-tag">Docker</span>
-                            <span class="skill-tag">Kubernetes</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Databases</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">PostgreSQL</span>
-                            <span class="skill-tag">MySQL</span>
-                            <span class="skill-tag">MongoDB</span>
-                            <span class="skill-tag">SQL Server</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Data Science & ML</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">NumPy</span>
-                            <span class="skill-tag">Pandas</span>
-                            <span class="skill-tag">Scikit-learn</span>
-                            <span class="skill-tag">TensorFlow</span>
-                            <span class="skill-tag">PyTorch</span>
-                            <span class="skill-tag">OpenCV</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!--                <div class="skills-grid">-->
+<!--                    <div class="skill-category">-->
+<!--                        <h3>Programming Languages</h3>-->
+<!--                        <div class="skill-tags">-->
+<!--                            <span class="skill-tag">Python</span>-->
+<!--                            <span class="skill-tag">Java</span>-->
+<!--                            <span class="skill-tag">C#</span>-->
+<!--                            <span class="skill-tag">Kotlin</span>-->
+<!--                            <span class="skill-tag">C++</span>-->
+<!--                            <span class="skill-tag">JavaScript</span>-->
+<!--                            <span class="skill-tag">TypeScript</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="skill-category">-->
+<!--                        <h3>Frameworks & Tools</h3>-->
+<!--                        <div class="skill-tags">-->
+<!--                            <span class="skill-tag">React</span>-->
+<!--                            <span class="skill-tag">Spring Boot</span>-->
+<!--                            <span class="skill-tag">Flask</span>-->
+<!--                            <span class="skill-tag">Django</span>-->
+<!--                            <span class="skill-tag">Docker</span>-->
+<!--                            <span class="skill-tag">Kubernetes</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="skill-category">-->
+<!--                        <h3>Databases</h3>-->
+<!--                        <div class="skill-tags">-->
+<!--                            <span class="skill-tag">PostgreSQL</span>-->
+<!--                            <span class="skill-tag">MySQL</span>-->
+<!--                            <span class="skill-tag">MongoDB</span>-->
+<!--                            <span class="skill-tag">SQL Server</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="skill-category">-->
+<!--                        <h3>Data Science & ML</h3>-->
+<!--                        <div class="skill-tags">-->
+<!--                            <span class="skill-tag">NumPy</span>-->
+<!--                            <span class="skill-tag">Pandas</span>-->
+<!--                            <span class="skill-tag">Scikit-learn</span>-->
+<!--                            <span class="skill-tag">TensorFlow</span>-->
+<!--                            <span class="skill-tag">PyTorch</span>-->
+<!--                            <span class="skill-tag">OpenCV</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
 
-            <div class="contact-info">
-                <h3>Let's Connect</h3>
-                <p>Feel free to reach out for collaborations, opportunities, or just to say hello!</p>
-                <div>
-                    <a href="mailto:davidhristov10@gmail.com" class="contact-item">📧 davidhristov10@gmail.com</a>
-                    <a href="https://github.com/davidhristov59" class="contact-item" target="_blank">🔗 GitHub</a>
-                    <a href="https://www.linkedin.com/in/david-hristov-0985a4176" class="contact-item" target="_blank">💼 LinkedIn</a>
-                    <span class="contact-item">📍 Skopje, North Macedonia</span>
-                </div>
-            </div>
-        </div>
+<!--            <div class="contact-info">-->
+<!--                <h3>Let's Connect</h3>-->
+<!--                <p>Feel free to reach out for collaborations, opportunities, or just to say hello!</p>-->
+<!--                <div>-->
+<!--                    <a href="mailto:davidhristov10@gmail.com" class="contact-item">📧 davidhristov10@gmail.com</a>-->
+<!--                    <a href="https://github.com/davidhristov59" class="contact-item" target="_blank">🔗 GitHub</a>-->
+<!--                    <a href="https://www.linkedin.com/in/david-hristov-0985a4176" class="contact-item" target="_blank">💼 LinkedIn</a>-->
+<!--                    <span class="contact-item">📍 Skopje, North Macedonia</span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
 
-        <!-- Experience Page -->
-        <div class="page" id="experience">
-            <h1 class="section-title">Experience</h1>
-            <div class="experience-item">
-                <div class="job-title">Software Engineering Intern</div>
-                <div class="company">Inteligenta</div>
-                <div class="duration">April 2025 - August 2025</div>
-                <div class="job-description">
-                    <ul>
-                        <li>Contributed to large-scale enterprise project development with modernized architecture</li>
-                        <li>Participated in full development cycle: design, implementation, and feature integration across front-end and back-end</li>
-                        <li>Worked with relational databases and optimized data flow between services</li>
-                        <li>Actively participated in refactoring legacy systems to modern solutions</li>
-                        <li>Collaborated with cross-functional teams in an agile development environment</li>
-                    </ul>
-                    <div class="tech-stack">
-                        <strong>Technologies used:</strong> Java, Spring Boot, React, TypeScript, PostgreSQL, Git
-                    </div>
-                </div>
-            </div>
+<!--        &lt;!&ndash; Experience Page &ndash;&gt;-->
+<!--        <div class="page" id="experience">-->
+<!--            <h1 class="section-title">Experience</h1>-->
+<!--            <div class="experience-item">-->
+<!--                <div class="job-title">Software Engineering Intern</div>-->
+<!--                <div class="company">Inteligenta</div>-->
+<!--                <div class="duration">April 2025 - August 2025</div>-->
+<!--                <div class="job-description">-->
+<!--                    <ul>-->
+<!--                        <li>Contributed to large-scale enterprise project development with modernized architecture</li>-->
+<!--                        <li>Participated in full development cycle: design, implementation, and feature integration across front-end and back-end</li>-->
+<!--                        <li>Worked with relational databases and optimized data flow between services</li>-->
+<!--                        <li>Actively participated in refactoring legacy systems to modern solutions</li>-->
+<!--                        <li>Collaborated with cross-functional teams in an agile development environment</li>-->
+<!--                    </ul>-->
+<!--                    <div class="tech-stack">-->
+<!--                        <strong>Technologies used:</strong> Java, Spring Boot, React, TypeScript, PostgreSQL, Git-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
 
-            <!-- Education as Experience -->
-            <div class="experience-item">
-                <div class="job-title">Software Engineering Student</div>
-                <div class="company">Faculty of Computer Science and Engineering (FCSE - Skopje)</div>
-                <div class="duration">September 2022 - Expected June 2026</div>
-                <div class="job-description">
-                    <p>Currently in my 4th year with strong academic performance across all areas. Relevant coursework includes:</p>
-                    <ul>
-                        <li>DevOps and Containerization Technologies</li>
-                        <li>Operating Systems and Networks & Security</li>
-                        <li>Web Programming and Service-Oriented Architectures</li>
-                        <li>Design and Architecture of Software</li>
-                        <li>Database Systems and Management</li>
-                        <li>Artificial Intelligence and Machine Learning</li>
-                        <li>Probability and Statistics for Data Science</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+<!--            &lt;!&ndash; Education as Experience &ndash;&gt;-->
+<!--            <div class="experience-item">-->
+<!--                <div class="job-title">Software Engineering Student</div>-->
+<!--                <div class="company">Faculty of Computer Science and Engineering (FCSE - Skopje)</div>-->
+<!--                <div class="duration">September 2022 - Expected June 2026</div>-->
+<!--                <div class="job-description">-->
+<!--                    <p>Currently in my 4th year with strong academic performance across all areas. Relevant coursework includes:</p>-->
+<!--                    <ul>-->
+<!--                        <li>DevOps and Containerization Technologies</li>-->
+<!--                        <li>Operating Systems and Networks & Security</li>-->
+<!--                        <li>Web Programming and Service-Oriented Architectures</li>-->
+<!--                        <li>Design and Architecture of Software</li>-->
+<!--                        <li>Database Systems and Management</li>-->
+<!--                        <li>Artificial Intelligence and Machine Learning</li>-->
+<!--                        <li>Probability and Statistics for Data Science</li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
 
-        <!-- Projects Page -->
-        <div class="page" id="projects">
-            <h1 class="section-title">Featured Projects</h1>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-title">
-                        <a href="https://github.com/davidhristov59/Movie-Management-System" target="_blank">Movie Management System</a>
-                    </div>
-                    <div class="project-tech">Flask, Streamlit, MongoDB, Docker, Kubernetes, AWS, GitHub Actions</div>
-                    <div class="project-description">
-                        A full-stack movie management web application with interactive Streamlit frontend and Flask REST API backend.
-                        Features automated CI/CD pipeline, production-grade Kubernetes orchestration on AWS EC2, and enterprise
-                        monitoring with Prometheus and Grafana.
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/davidhristov59/Movie-Management-System" target="_blank" class="project-link">GitHub Repository</a>
-                    </div>
-                </div>
+<!--        &lt;!&ndash; Projects Page &ndash;&gt;-->
+<!--        <div class="page" id="projects">-->
+<!--            <h1 class="section-title">Featured Projects</h1>-->
+<!--            <div class="projects-grid">-->
+<!--                <div class="project-card">-->
+<!--                    <div class="project-title">-->
+<!--                        <a href="https://github.com/davidhristov59/Movie-Management-System" target="_blank">Movie Management System</a>-->
+<!--                    </div>-->
+<!--                    <div class="project-tech">Flask, Streamlit, MongoDB, Docker, Kubernetes, AWS, GitHub Actions</div>-->
+<!--                    <div class="project-description">-->
+<!--                        A full-stack movie management web application with interactive Streamlit frontend and Flask REST API backend.-->
+<!--                        Features automated CI/CD pipeline, production-grade Kubernetes orchestration on AWS EC2, and enterprise-->
+<!--                        monitoring with Prometheus and Grafana.-->
+<!--                    </div>-->
+<!--                    <div class="project-links">-->
+<!--                        <a href="https://github.com/davidhristov59/Movie-Management-System" target="_blank" class="project-link">GitHub Repository</a>-->
+<!--                    </div>-->
+<!--                </div>-->
 
-                <div class="project-card">
-                    <div class="project-title">
-                        <a href="https://github.com/davidhristov59/eeg-epilepsy-seizure-classification" target="_blank">EEG Epilepsy Seizure Classification</a>
-                    </div>
-                    <div class="project-tech">Python, Scikit-learn, PyEEG, Signal Processing, Machine Learning</div>
-                    <div class="project-description">
-                        Machine learning pipeline for automated seizure detection using EEG signals. Implements comprehensive
-                        feature extraction techniques and evaluates multiple ML models including MLP, SVM, Random Forest,
-                        KNN, and AdaBoost for clinical interpretation.
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/davidhristov59/eeg-epilepsy-seizure-classification" target="_blank" class="project-link">GitHub Repository</a>
-                    </div>
-                </div>
+<!--                <div class="project-card">-->
+<!--                    <div class="project-title">-->
+<!--                        <a href="https://github.com/davidhristov59/eeg-epilepsy-seizure-classification" target="_blank">EEG Epilepsy Seizure Classification</a>-->
+<!--                    </div>-->
+<!--                    <div class="project-tech">Python, Scikit-learn, PyEEG, Signal Processing, Machine Learning</div>-->
+<!--                    <div class="project-description">-->
+<!--                        Machine learning pipeline for automated seizure detection using EEG signals. Implements comprehensive-->
+<!--                        feature extraction techniques and evaluates multiple ML models including MLP, SVM, Random Forest,-->
+<!--                        KNN, and AdaBoost for clinical interpretation.-->
+<!--                    </div>-->
+<!--                    <div class="project-links">-->
+<!--                        <a href="https://github.com/davidhristov59/eeg-epilepsy-seizure-classification" target="_blank" class="project-link">GitHub Repository</a>-->
+<!--                    </div>-->
+<!--                </div>-->
 
-                <div class="project-card">
-                    <div class="project-title">
-                        <a href="https://github.com/davidhristov59/semantic-visualizer" target="_blank">Semantic Data Visualization Tool</a>
-                    </div>
-                    <div class="project-tech">Spring Boot, GraphQL, RDF/OWL, SPARQL, Semantic Web</div>
-                    <div class="project-description">
-                        Web application for interactive querying and visualization of semantic data through ontology-driven navigation.
-                        Integrates RDF/OWL data sources and uses SPARQL for retrieving semantic relationships to enhance
-                        LLM-generated responses.
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/davidhristov59/semantic-visualizer" target="_blank" class="project-link">GitHub Repository</a>
-                    </div>
-                </div>
+<!--                <div class="project-card">-->
+<!--                    <div class="project-title">-->
+<!--                        <a href="https://github.com/davidhristov59/semantic-visualizer" target="_blank">Semantic Data Visualization Tool</a>-->
+<!--                    </div>-->
+<!--                    <div class="project-tech">Spring Boot, GraphQL, RDF/OWL, SPARQL, Semantic Web</div>-->
+<!--                    <div class="project-description">-->
+<!--                        Web application for interactive querying and visualization of semantic data through ontology-driven navigation.-->
+<!--                        Integrates RDF/OWL data sources and uses SPARQL for retrieving semantic relationships to enhance-->
+<!--                        LLM-generated responses.-->
+<!--                    </div>-->
+<!--                    <div class="project-links">-->
+<!--                        <a href="https://github.com/davidhristov59/semantic-visualizer" target="_blank" class="project-link">GitHub Repository</a>-->
+<!--                    </div>-->
+<!--                </div>-->
 
-                <div class="project-card">
-                    <div class="project-title">
-                        <a href="https://github.com/davidhristov59/task-management" target="_blank">Task Management Microservice</a>
-                    </div>
-                    <div class="project-tech">Kotlin, Spring Boot, Axon Framework, Kafka, Domain-Driven Design</div>
-                    <div class="project-description">
-                        Distributed microservice implementing Domain-Driven Design principles for academic task management.
-                        Features CQRS and event sourcing with Axon Framework, using Kafka for asynchronous communication
-                        and eventual consistency.
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/davidhristov59/task-management" target="_blank" class="project-link">GitHub Repository</a>
-                    </div>
-                </div>
+<!--                <div class="project-card">-->
+<!--                    <div class="project-title">-->
+<!--                        <a href="https://github.com/davidhristov59/task-management" target="_blank">Task Management Microservice</a>-->
+<!--                    </div>-->
+<!--                    <div class="project-tech">Kotlin, Spring Boot, Axon Framework, Kafka, Domain-Driven Design</div>-->
+<!--                    <div class="project-description">-->
+<!--                        Distributed microservice implementing Domain-Driven Design principles for academic task management.-->
+<!--                        Features CQRS and event sourcing with Axon Framework, using Kafka for asynchronous communication-->
+<!--                        and eventual consistency.-->
+<!--                    </div>-->
+<!--                    <div class="project-links">-->
+<!--                        <a href="https://github.com/davidhristov59/task-management" target="_blank" class="project-link">GitHub Repository</a>-->
+<!--                    </div>-->
+<!--                </div>-->
 
-                <div class="project-card">
-                    <div class="project-title">
-                        <a href="https://msepredictions-cqb0d5b7e4cyc4ar.westeurope-01.azurewebsites.net" target="_blank">Macedonian Stock Exchange Prediction</a>
-                    </div>
-                    <div class="project-tech">Python, Flask, Docker, Azure, Machine Learning</div>
-                    <div class="project-description">
-                        Web application for predicting stock prices using technical and sentiment analysis.
-                        Built with microservices architecture, dockerized, and deployed to Azure Cloud with
-                        real-time market data processing capabilities.
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/davidhristov59/Macedonian-Stock-Exchange-Prediction" target="_blank" class="project-link">GitHub Repository</a>
-                        <a href="https://msepredictions-cqb0d5b7e4cyc4ar.westeurope-01.azurewebsites.net" target="_blank" class="project-link">Live Demo</a>
-                    </div>
-                </div>
+<!--                <div class="project-card">-->
+<!--                    <div class="project-title">-->
+<!--                        <a href="https://msepredictions-cqb0d5b7e4cyc4ar.westeurope-01.azurewebsites.net" target="_blank">Macedonian Stock Exchange Prediction</a>-->
+<!--                    </div>-->
+<!--                    <div class="project-tech">Python, Flask, Docker, Azure, Machine Learning</div>-->
+<!--                    <div class="project-description">-->
+<!--                        Web application for predicting stock prices using technical and sentiment analysis.-->
+<!--                        Built with microservices architecture, dockerized, and deployed to Azure Cloud with-->
+<!--                        real-time market data processing capabilities.-->
+<!--                    </div>-->
+<!--                    <div class="project-links">-->
+<!--                        <a href="https://github.com/davidhristov59/Macedonian-Stock-Exchange-Prediction" target="_blank" class="project-link">GitHub Repository</a>-->
+<!--                        <a href="https://msepredictions-cqb0d5b7e4cyc4ar.westeurope-01.azurewebsites.net" target="_blank" class="project-link">Live Demo</a>-->
+<!--                    </div>-->
+<!--                </div>-->
 
-                <div class="project-card">
-                    <div class="project-title">
-                        <a href="https://github.com/davidhristov59/FitForge" target="_blank">FitForge - Fitness Tracker</a>
-                    </div>
-                    <div class="project-tech">C#, .NET, MVC Pattern, Entity Framework ORM</div>
-                    <div class="project-description">
-                        Comprehensive fitness tracking application that generates personalized workout plans, provides exercise guidance,
-                        and includes nutrition planning. Features complete authentication system with CRUD operations and
-                        user profile management.
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/davidhristov59/FitForge" target="_blank" class="project-link">GitHub Repository</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<!--                <div class="project-card">-->
+<!--                    <div class="project-title">-->
+<!--                        <a href="https://github.com/davidhristov59/FitForge" target="_blank">FitForge - Fitness Tracker</a>-->
+<!--                    </div>-->
+<!--                    <div class="project-tech">C#, .NET, MVC Pattern, Entity Framework ORM</div>-->
+<!--                    <div class="project-description">-->
+<!--                        Comprehensive fitness tracking application that generates personalized workout plans, provides exercise guidance,-->
+<!--                        and includes nutrition planning. Features complete authentication system with CRUD operations and-->
+<!--                        user profile management.-->
+<!--                    </div>-->
+<!--                    <div class="project-links">-->
+<!--                        <a href="https://github.com/davidhristov59/FitForge" target="_blank" class="project-link">GitHub Repository</a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
-<script>
-    // Navigation functionality
-    function showPage(pageId) {
-        // Hide all pages
-        document.querySelectorAll('.page').forEach(page => {
-            page.classList.remove('active');
-        });
+<!--<script>-->
+<!--    // Navigation functionality-->
+<!--    function showPage(pageId) {-->
+<!--        // Hide all pages-->
+<!--        document.querySelectorAll('.page').forEach(page => {-->
+<!--            page.classList.remove('active');-->
+<!--        });-->
 
-        // Show selected page
-        document.getElementById(pageId).classList.add('active');
+<!--        // Show selected page-->
+<!--        document.getElementById(pageId).classList.add('active');-->
 
-        // Update active nav link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.classList.remove('active');
-        });
-        document.querySelector(`[data-page="${pageId}"]`).classList.add('active');
+<!--        // Update active nav link-->
+<!--        document.querySelectorAll('.nav-link').forEach(link => {-->
+<!--            link.classList.remove('active');-->
+<!--        });-->
+<!--        document.querySelector(`[data-page="${pageId}"]`).classList.add('active');-->
 
-        // Close mobile menu
-        document.getElementById('nav-menu').classList.remove('active');
+<!--        // Close mobile menu-->
+<!--        document.getElementById('nav-menu').classList.remove('active');-->
 
-        // Update page title
-        const titles = {
-            'home': 'David Hristov - Portfolio',
-            'about': 'About Me - David Hristov',
-            'experience': 'Experience - David Hristov',
-            'projects': 'Projects - David Hristov'
-        };
-        document.title = titles[pageId] || 'David Hristov - Portfolio';
-    }
+<!--        // Update page title-->
+<!--        const titles = {-->
+<!--            'home': 'David Hristov - Portfolio',-->
+<!--            'about': 'About Me - David Hristov',-->
+<!--            'experience': 'Experience - David Hristov',-->
+<!--            'projects': 'Projects - David Hristov'-->
+<!--        };-->
+<!--        document.title = titles[pageId] || 'David Hristov - Portfolio';-->
+<!--    }-->
 
-    // Add event listeners to navigation links
-    document.addEventListener('DOMContentLoaded', function() {
-        // Navigation links
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const pageId = this.getAttribute('data-page');
-                showPage(pageId);
-            });
-        });
+<!--    // Add event listeners to navigation links-->
+<!--    document.addEventListener('DOMContentLoaded', function() {-->
+<!--        // Navigation links-->
+<!--        document.querySelectorAll('.nav-link').forEach(link => {-->
+<!--            link.addEventListener('click', function(e) {-->
+<!--                e.preventDefault();-->
+<!--                const pageId = this.getAttribute('data-page');-->
+<!--                showPage(pageId);-->
+<!--            });-->
+<!--        });-->
 
-        // CTA buttons
-        document.querySelectorAll('[data-page]').forEach(button => {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                const pageId = this.getAttribute('data-page');
-                showPage(pageId);
-            });
-        });
+<!--        // CTA buttons-->
+<!--        document.querySelectorAll('[data-page]').forEach(button => {-->
+<!--            button.addEventListener('click', function(e) {-->
+<!--                e.preventDefault();-->
+<!--                const pageId = this.getAttribute('data-page');-->
+<!--                showPage(pageId);-->
+<!--            });-->
+<!--        });-->
 
-        // Mobile menu toggle
-        const mobileToggle = document.getElementById('mobile-toggle');
-        const navMenu = document.getElementById('nav-menu');
+<!--        // Mobile menu toggle-->
+<!--        const mobileToggle = document.getElementById('mobile-toggle');-->
+<!--        const navMenu = document.getElementById('nav-menu');-->
 
-        mobileToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-        });
+<!--        mobileToggle.addEventListener('click', function() {-->
+<!--            navMenu.classList.toggle('active');-->
+<!--        });-->
 
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function() {
-                navMenu.classList.remove('active');
-            });
-        });
+<!--        // Close mobile menu when clicking on a link-->
+<!--        document.querySelectorAll('.nav-link').forEach(link => {-->
+<!--            link.addEventListener('click', function() {-->
+<!--                navMenu.classList.remove('active');-->
+<!--            });-->
+<!--        });-->
 
-        // Smooth scrolling for better UX
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 10) {
-                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-                navbar.style.backdropFilter = 'blur(10px)';
-            } else {
-                navbar.style.background = '#fff';
-                navbar.style.backdropFilter = 'none';
-            }
-        });
+<!--        // Smooth scrolling for better UX-->
+<!--        window.addEventListener('scroll', function() {-->
+<!--            const navbar = document.querySelector('.navbar');-->
+<!--            if (window.scrollY > 10) {-->
+<!--                navbar.style.background = 'rgba(255, 255, 255, 0.95)';-->
+<!--                navbar.style.backdropFilter = 'blur(10px)';-->
+<!--            } else {-->
+<!--                navbar.style.background = '#fff';-->
+<!--                navbar.style.backdropFilter = 'none';-->
+<!--            }-->
+<!--        });-->
 
-        console.log('🚀 Portfolio loaded successfully!');
-    });
-</script>
-</body>
-</html>
+<!--        console.log('🚀 Portfolio loaded successfully!');-->
+<!--    });-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
