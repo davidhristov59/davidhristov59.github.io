@@ -6,6 +6,14 @@ import { SiPytorch, SiApacheflink, SiHuggingface, SiDjango, SiFlask, SiStreamlit
 import { VscAzure } from 'react-icons/vsc';
 import { Shield } from 'lucide-react';
 
+import semanticImg from './assets/img/semantic.png'
+import fitforgeImg from './assets/img/fitforge.png'
+import movieImg from './assets/img/movie.png'
+import mseImg from './assets/img/mse.png'
+import opticalflowImg from './assets/img/opticalflow.png'
+import eegImg from './assets/img/eeg.png'
+import taskmngmntImg from './assets/img/taskmngmnt.png'
+
 const LoadingSpinner = () => (
     <div className="flex items-center justify-center min-h-screen bg-white dark:bg-slate-900">
         <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600"></div>
@@ -41,14 +49,14 @@ const projectsData = [
         description: 'Knowledge Graph Exploration Platform with VQA capabilities, multi-hop traversal, LLM-based entity linking, and interactive visualization',
         link: 'https://github.com/davidhristov59/semantic-visualizer',
         tags: ['Java', 'Spring Boot', 'React', 'Apache Jena', 'D3.js', 'Tailwind'],
-        image: '/assets/img/semantic.png',
+        image: semanticImg,
         status: 'Ongoing'
     },
     {
         title: 'Macedonian Stock Exchange Prediction',
         description: 'Developed a web application to predict stock prices using technical and sentiment analysis.',
         link: 'https://github.com/davidhristov59/Macedonian-Stock-Exchange-Prediction',
-        image: '/src/assets/img/mse.png',
+        image: mseImg,
         tags: ['Flask', 'Python', 'Docker', 'BeautifulSoup', 'Azure Cloud'],
         website: 'https://msepredictions-cqb0d5b7e4cyc4ar.westeurope-01.azurewebsites.net'
     },
@@ -57,34 +65,34 @@ const projectsData = [
         description: 'ML system for seizure prediction using advanced time/frequency/nonlinear features with multiple classification models',
         link: 'https://github.com/davidhristov59/eeg-epilepsy-seizure-classification',
         tags: ['Python', 'PyEEG', 'MNE', 'SciPy', 'Sci-kit-learn'],
-        image: '/src/assets/img/eeg.png',
+        image: eegImg
     },
     {
         title: 'Task Management System Microservice',
         description: 'This project implements a DDD Service-Oriented designed to help users (employees and students) create and manage workspaces, projects, and tasks. ',
         link: 'https://github.com/davidhristov59/task-management',
         tags: ['Kotlin', 'Axon Framework', 'Kafka', 'Consul', 'TypeScript'],
-        image: '/src/assets/img/taskmngmnt.png',
+        image: taskmngmntImg
     },
     {
         title: 'Movie Management System',
         description: 'The system allows users to explore, search, and manage movies with an interactive user interface. Data is stored and retrieved from MongoDB, and Flask serves as the backend API layer.',
         link: 'https://github.com/davidhristov59/Movie-Management-System',
         tags: ['Flask', 'Streamlit', 'Kubernetes (k3d)', 'Docker', 'GitHub Actions', 'AWS EC2', 'MongoDB'],
-        image: '/src/assets/img/movie.png',
+        image: movieImg
     },
     {
         title: 'FitForge',
         description: 'FitForge is a ready to use application for fitness and nutrition tracking, designed to generate personalized workout and meal plans based on user preferences and goals.',
         link: 'https://github.com/davidhristov59/FitForge',
-        image: '/src/assets/img/fitforge.png',
+        image: fitforgeImg,
         tags: ['C#', 'ASP .NET', 'Entity Framework', 'SQL Server', 'Bootstrap'],
     },
     {
         title: 'Optical Flow Calculation Algorithm',
         description: 'Created an algorithm to calculate optical flow in videos.',
         link: 'https://github.com/davidhristov59/Calculating-Optical-Flow',
-        image: '/src/assets/img/opticalflow.png',
+        image: opticalflowImg,
         tags: ['Python', 'OpenCV', 'Computer Vision'],
     },
     {
