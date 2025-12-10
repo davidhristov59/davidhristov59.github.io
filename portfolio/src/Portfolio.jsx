@@ -41,7 +41,7 @@ const projectsData = [
         description: 'Knowledge Graph Exploration Platform with VQA capabilities, multi-hop traversal, LLM-based entity linking, and interactive visualization',
         link: 'https://github.com/davidhristov59/semantic-visualizer',
         tags: ['Java', 'Spring Boot', 'React', 'Apache Jena', 'D3.js', 'Tailwind'],
-        image: '/src/assets/img/semantic.png',
+        image: '/Users/davidhristov/Desktop/Personal Page/davidhristov59.github.io/portfolio/public/img/semantic.png',
         status: 'Ongoing'
     },
     {
