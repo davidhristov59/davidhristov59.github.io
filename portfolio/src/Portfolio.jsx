@@ -76,7 +76,7 @@ const projectsData = [
     },
     {
         title: 'Movie Management System',
-        description: 'The system allows users to explore, search, and manage movies with an interactive user interface. Data is stored and retrieved from MongoDB, and Flask serves as the backend API layer.',
+        description: 'This project demonstrates modern containerization, orchestration, CI/CD pipelines, and cloud deployment practices through a practical movie exploration and management system.',
         link: 'https://github.com/davidhristov59/Movie-Management-System',
         tags: ['Flask', 'Streamlit', 'Kubernetes (k3d)', 'Docker', 'GitHub Actions', 'AWS EC2', 'MongoDB'],
         image: movieImg
