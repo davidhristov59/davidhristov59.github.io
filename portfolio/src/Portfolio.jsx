@@ -48,23 +48,24 @@ const projectsData = [
         title: 'CogniViz',
         description: 'Knowledge Graph Exploration Platform with VQA capabilities, multi-hop traversal, LLM-based entity linking, and interactive visualization',
         link: 'https://github.com/davidhristov59/semantic-visualizer',
-        tags: ['Java', 'Spring Boot', 'React', 'Apache Jena', 'D3.js', 'Tailwind'],
+        tags: ['Semantic Web', 'Java', 'Spring Boot', 'React', 'Apache Jena', 'D3.js', 'Tailwind'],
         image: semanticImg,
         status: 'Ongoing'
     },
     {
-        title: 'Macedonian Stock Exchange Prediction',
-        description: 'Developed a web application to predict stock prices using technical and sentiment analysis.',
-        link: 'https://github.com/davidhristov59/Macedonian-Stock-Exchange-Prediction',
-        image: mseImg,
-        tags: ['Flask', 'Python', 'Docker', 'BeautifulSoup', 'Azure Cloud'],
-        website: 'https://msepredictions-cqb0d5b7e4cyc4ar.westeurope-01.azurewebsites.net'
+        title: 'Azure AI Assistant',
+        description: 'Azure-RAG-System is a .NET 8 web application that implements a Retrieval-Augmented Generation (RAG) architecture. It leverages Azure\'s robust AI ecosystem to provide intelligent, context-aware responses to user queries.',
+        link: 'https://github.com/davidhristov59/Azure-RAG-System',
+        // image: '/src/assets/img/rag.png',
+        tags: ['ASP.NET Core', 'Azure Cloud', 'Azure App Services', 'Cosmos DB', 'Azure OpenAI', 'Azure Cognitive Search', 'Github Actions'],
+        status: 'Ongoing',
+        website: 'https://azure-rag-platform-gudwa2bjhehme5hf.italynorth-01.azurewebsites.net'
     },
     {
         title: 'EEG Epileptic Seizure Classification',
         description: 'ML system for seizure prediction using advanced time/frequency/nonlinear features with multiple classification models',
         link: 'https://github.com/davidhristov59/eeg-epilepsy-seizure-classification',
-        tags: ['Python', 'PyEEG', 'MNE', 'SciPy', 'Sci-kit-learn'],
+        tags: ['Python', 'PyEEG', 'MNE', 'SciPy', 'Sci-kit learn'],
         image: eegImg
     },
     {
@@ -75,11 +76,19 @@ const projectsData = [
         image: taskmngmntImg
     },
     {
-        title: 'Movie Management System',
+        title: 'Movie Management System ',
         description: 'This project demonstrates modern containerization, orchestration, CI/CD pipelines, and cloud deployment practices through a practical movie exploration and management system.',
         link: 'https://github.com/davidhristov59/Movie-Management-System',
-        tags: ['Flask', 'Streamlit', 'Kubernetes (k3d)', 'Docker', 'GitHub Actions', 'AWS EC2', 'MongoDB'],
+        tags: ['Kubernetes (k3d)','AWS EC2', 'MongoDB', 'Flask', 'Streamlit', 'Docker', 'GitHub Actions'],
         image: movieImg
+    },
+    {
+        title: 'Macedonian Stock Exchange Prediction',
+        description: 'Developed a web application to predict stock prices using technical and sentiment analysis.',
+        link: 'https://github.com/davidhristov59/Macedonian-Stock-Exchange-Prediction',
+        image: mseImg,
+        tags: ['Flask', 'Python', 'Docker', 'BeautifulSoup', 'Azure Cloud'],
+        website: 'https://msepredictions-cqb0d5b7e4cyc4ar.westeurope-01.azurewebsites.net'
     },
     {
         title: 'FitForge',
@@ -96,19 +105,19 @@ const projectsData = [
         tags: ['Python', 'OpenCV', 'Computer Vision'],
     },
     {
-        title: 'Intelligent Support System (RAG)',
-        description: 'RAG-based chatbot with vectorized knowledge retrieval and Azure OpenAI integration',
-        link: 'https://github.com/davidhristov59/Intelligent-Support-Automation-System',
-        // image: '/src/assets/img/rag.png',
-        tags: ['ASP.NET Core', 'Azure Cloud', 'Cosmos DB', 'Azure OpenAI', 'Cognitive Search'],
+        title: 'Real-Time Cascading Failure Detection and Prevention System for Smart Grids',
+        description: 'An early warning system that detects cascading failures in smart grid networks using graph-based analysis, Apache Flink stream processing, and real-time simulation.',
+        link: 'https://github.com/davidhristov59/Real-Time-Cascading-Failure-Detection-System',
+        // image: '/src/assets/img/opticalflow.png',
+        tags: ['Apache Flink', 'Apache Spark', 'Apache Kafka', 'Graph Analysis', 'TimeScaleDB', 'Docker', 'FastAPI'],
         status: 'Ongoing'
     },
     {
-        title: 'Smart Grid Cascading Failure Detection',
-        description: 'Real-time streaming system predicting cascading failures 10 minutes before occurrence. Prevents grid blackouts by detecting instability patterns and predicting cascade propagation in real-time.',
-        link: '/',
+        title: 'Hybrid Privacy-Preserving RAG – Secure Edge-Cloud AI System',
+        description: 'RAG system that enables the secure use of Cloud-based LLMs without exposing sensitive data by utilizing a Split Inference architecture, the system ensures that personally identifiable information (PII) is masked locally before being sent to the cloud for processing.',
+        // link: 'https://github.com/davidhristov59/Real-Time-Cascading-Failure-Detection-System',
         // image: '/src/assets/img/opticalflow.png',
-        tags: ['Apache Flink', 'Kafka', 'Graph Analysis', 'ClickHouse/TimeScaleDB', 'Docker'],
+        tags: ['Python', 'NLP', 'LLM', 'Hybrid RAG', 'Edge Computing', 'LangChain', 'FastAPI'],
         status: 'Ongoing'
     },
 ];
