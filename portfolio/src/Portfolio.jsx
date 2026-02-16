@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback, memo, Suspense } from 'react';
 import { Github, Linkedin, Mail, ChevronUp, ExternalLink , Moon, Sun } from 'lucide-react';
 import { FaPython, FaJava, FaDocker, FaGit, FaReact, FaAws, FaHtml5 } from 'react-icons/fa';
 import { SiCplusplus, SiSpringboot, SiKubernetes, SiPostgresql, SiMongodb, SiTensorflow, SiDotnet, SiC, SiTailwindcss } from 'react-icons/si';
-import { SiPytorch, SiApacheflink, SiHuggingface, SiDjango, SiFlask, SiStreamlit} from 'react-icons/si';
+import { SiPytorch, SiApacheflink, SiHuggingface, SiDjango, SiFlask, SiStreamlit, SiTypescript, SiKotlin, SiApachekafka, SiFastapi, SiScikitlearn, SiApachespark, SiOpencv, SiGithubactions, SiLangchain, SiPandas, SiNumpy } from 'react-icons/si';
 import { VscAzure } from 'react-icons/vsc';
 import { Shield } from 'lucide-react';
 
@@ -21,26 +21,46 @@ const LoadingSpinner = () => (
 );
 
 const skillsData = [
+    // Languages
     { name: 'Java', icon: <FaJava size={40} /> },
     { name: 'Python', icon: <FaPython size={40} /> },
-    { name: 'C++', icon: <SiCplusplus size={40} /> },
-    { name: 'C', icon: <SiC size={40} /> },
+    // { name: 'C++', icon: <SiCplusplus size={40} /> },
+    // { name: 'C', icon: <SiC size={40} /> },
+    { name: 'Kotlin', icon: <SiKotlin size={40} /> },
+    
+    // Backend Frameworks & Databases
     { name: 'Spring Boot', icon: <SiSpringboot size={40} /> },
     { name: 'ASP .NET Core', icon: <SiDotnet size={40} /> },
+    { name: 'FastAPI', icon: <SiFastapi size={40} /> },
     { name: 'Flask', icon: <SiFlask size={40} /> },
     { name: 'Django', icon: <SiDjango size={40} /> },
-    { name: 'React', icon: <FaReact size={40}/>},
-    { name: 'Tailwind', icon: <SiTailwindcss size={40} /> },
-    { name: 'Streamlit', icon: <SiStreamlit size={40} /> },
-    { name: 'HTML/CSS', icon: <FaHtml5 size={40} /> },
+    { name: 'PostgreSQL', icon: <SiPostgresql size={40} /> },
+    { name: 'MongoDB', icon: <SiMongodb size={40} /> },
+
+    // Cloud & DevOps
     { name: 'Docker', icon: <FaDocker size={40} /> },
-    { name: 'Git', icon: <FaGit size={40} /> },
     { name: 'Kubernetes', icon: <SiKubernetes size={40} /> },
     { name: 'AWS', icon: <FaAws size={40} /> },
     { name: 'Azure', icon: <VscAzure size={40} /> },
-    { name: 'PostgreSQL', icon: <SiPostgresql size={40} /> },
-    { name: 'MongoDB', icon: <SiMongodb size={40} /> },
+    { name: 'Git', icon: <FaGit size={40} /> },
+    { name: 'GitHub Actions', icon: <SiGithubactions size={40} /> },
+    { name: 'Apache Kafka', icon: <SiApachekafka size={40} /> },
+    { name: 'Apache Spark', icon: <SiApachespark size={40} /> },
+    { name: 'Apache Flink', icon: <SiApacheflink size={40} /> },
+
+    // Python Libraries (AI/ML/Data)
+    { name: 'LangChain', icon: <SiLangchain size={40} /> },
     { name: 'TensorFlow', icon: <SiTensorflow size={40} /> },
+    { name: 'PyTorch', icon: <SiPytorch size={40} /> },
+    { name: 'Scikit-Learn', icon: <SiScikitlearn size={40} /> },
+    { name: 'Pandas', icon: <SiPandas size={40} /> },
+    { name: 'OpenCV', icon: <SiOpencv size={40} /> },
+
+    // Frontend
+    { name: 'React', icon: <FaReact size={40}/>},
+    { name: 'Tailwind', icon: <SiTailwindcss size={40} /> },
+    { name: 'HTML/CSS', icon: <FaHtml5 size={40} /> },
+    { name: 'Streamlit', icon: <SiStreamlit size={40} /> },
 ];
 
 const projectsData = [
@@ -114,8 +134,8 @@ const projectsData = [
     },
     {
         title: 'Hybrid Privacy-Preserving RAG – Secure Edge-Cloud AI System',
-        description: 'RAG system that enables the secure use of Cloud-based LLMs without exposing sensitive data by utilizing a Split Inference architecture, the system ensures that personally identifiable information (PII) is masked locally before being sent to the cloud for processing.',
-        // link: 'https://github.com/davidhristov59/Real-Time-Cascading-Failure-Detection-System',
+        description: 'Hybrid RAG system that enables the secure use of Cloud-based LLMs without exposing sensitive data by utilizing a Split Inference architecture, the system ensures that personally identifiable information (PII) is masked locally before being sent to the cloud for processing.',
+        link: 'https://github.com/davidhristov59/Hybrid-Privacy-Preserving-RAG-via-Edge-Cloud-Split-Inference',
         // image: '/src/assets/img/opticalflow.png',
         tags: ['Python', 'NLP', 'LLM', 'Hybrid RAG', 'Edge Computing', 'LangChain', 'FastAPI'],
         status: 'Ongoing'
@@ -136,19 +156,19 @@ const educationData = [
     {
         institution: 'Faculty of Computer Science and Engineering (FCSE)',
         degree: 'BSc in Software Engineering',
-        date: 'Sept 2022 – current',
+        date: 'Sept 2022 – Summer 2026',
         location: 'Skopje, Macedonia',
         status: 'Ongoing',
         coursework: [
             'Natural Language Processing',
             'Mining Massive Datasets',
+            'Service-Oriented Architectures',
             'Web-Based Systems',
             'Data Science',
             'Artificial Intelligence',
-            'DevOps',
+            'DevOps (CI/CD)',
             'Service-Oriented Architectures',
             'Databases',
-            'Web Programming',
             'Advanced Programming',
             'Probability & Statistics'
         ]
@@ -157,12 +177,12 @@ const educationData = [
 
 const certificationsData = [
     {
-        name: 'Deep Learning with TensorFlow & PyTorch',
-        icon: <SiTensorflow size={24} />
-    },
-    {
         name: 'Latency-limited processing of streaming data with Apache Flink',
         icon: <SiApacheflink size={24} />
+    },
+    {
+        name: 'Deep Learning with TensorFlow & PyTorch',
+        icon: <SiTensorflow size={24} />
     },
     {
         name: 'Natural Language Processing',
