@@ -5,7 +5,6 @@ import { SiPytorch, SiApacheflink, SiHuggingface, SiDjango, SiFlask, SiStreamlit
 import { VscAzure } from 'react-icons/vsc';
 import { Shield } from 'lucide-react';
 
-import semanticImg from '../assets/img/semantic.png'
 import fitforgeImg from '../assets/img/fitforge.png'
 import movieImg from '../assets/img/movie.png'
 import mseImg from '../assets/img/mse.png'
@@ -13,15 +12,10 @@ import opticalflowImg from '../assets/img/opticalflow.png'
 import eegImg from '../assets/img/eeg.png'
 import taskmngmntImg from '../assets/img/taskmngmnt.png'
 import azureImg from '../assets/img/azure1.png'
-import azureImg2 from '../assets/img/azure2.png'
-import nlpImg from '../assets/img/nlp.png'
 import nlpImg2 from '../assets/img/nlp2.png'
-import nlpImg3 from '../assets/img/nlp3.png'
-import nlpImg4 from '../assets/img/nlp4.png'
 import radial from '../assets/img/radial.png'
 import rudarenjeImg from '../assets/img/rudarenje1.png'
-import rudarenjeImg2 from '../assets/img/rudarenje2.png'
-
+ 
 
 export const skillsData = [
     // Languages
