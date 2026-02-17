@@ -1,7 +1,6 @@
 import React from 'react';
 import { FaPython, FaJava, FaDocker, FaGit, FaReact, FaAws, FaHtml5 } from 'react-icons/fa';
-import { SiCplusplus, SiSpringboot, SiKubernetes, SiPostgresql, SiMongodb, SiTensorflow, SiDotnet, SiC, SiTailwindcss } from 'react-icons/si';
-import { SiPytorch, SiApacheflink, SiHuggingface, SiDjango, SiFlask, SiStreamlit, SiTypescript, SiKotlin, SiApachekafka, SiFastapi, SiScikitlearn, SiApachespark, SiOpencv, SiGithubactions, SiLangchain, SiPandas, SiNumpy } from 'react-icons/si';
+import { SiSpringboot, SiKubernetes, SiPostgresql, SiMongodb,SiLangchain, SiTensorflow, SiDotnet,SiHuggingface, SiTailwindcss, SiPytorch, SiApacheflink, SiDjango, SiFlask, SiStreamlit, SiKotlin, SiApachekafka, SiFastapi, SiScikitlearn, SiApachespark, SiGithubactions } from 'react-icons/si';
 import { VscAzure } from 'react-icons/vsc';
 import { Shield } from 'lucide-react';
 
@@ -18,45 +17,60 @@ import rudarenjeImg from '../assets/img/rudarenje1.png'
  
 
 export const skillsData = [
-    // Languages
-    { name: 'Java', icon: <FaJava size={40} /> },
-    { name: 'Python', icon: <FaPython size={40} /> },
-    // { name: 'C++', icon: <SiCplusplus size={40} /> },
-    // { name: 'C', icon: <SiC size={40} /> },
-    { name: 'Kotlin', icon: <SiKotlin size={40} /> },
-    
-    // Backend Frameworks & Databases
-    { name: 'Spring Boot', icon: <SiSpringboot size={40} /> },
-    { name: 'ASP .NET Core', icon: <SiDotnet size={40} /> },
-    { name: 'FastAPI', icon: <SiFastapi size={40} /> },
-    { name: 'Flask', icon: <SiFlask size={40} /> },
-    { name: 'Django', icon: <SiDjango size={40} /> },
-    { name: 'PostgreSQL', icon: <SiPostgresql size={40} /> },
-    { name: 'MongoDB', icon: <SiMongodb size={40} /> },
-
-    // Cloud & DevOps
-    { name: 'Docker', icon: <FaDocker size={40} /> },
-    { name: 'Kubernetes', icon: <SiKubernetes size={40} /> },
-    // { name: 'AWS', icon: <FaAws size={40} /> },
-    { name: 'Azure', icon: <VscAzure size={40} /> },
-    { name: 'Git', icon: <FaGit size={40} /> },
-    { name: 'GitHub Actions', icon: <SiGithubactions size={40} /> },
-    { name: 'Apache Kafka', icon: <SiApachekafka size={40} /> },
-    { name: 'Apache Spark', icon: <SiApachespark size={40} /> },
-    { name: 'Apache Flink', icon: <SiApacheflink size={40} /> },
-
-    // Python Libraries (AI/ML/Data)
-    { name: 'LangChain', icon: <SiLangchain size={40} /> },
-    { name: 'TensorFlow', icon: <SiTensorflow size={40} /> },
-    { name: 'PyTorch', icon: <SiPytorch size={40} /> },
-    { name: 'Scikit-Learn', icon: <SiScikitlearn size={40} /> },
-    { name: 'Pandas', icon: <SiPandas size={40} /> },
-
-    // Frontend
-    { name: 'React', icon: <FaReact size={40}/>},
-    { name: 'Tailwind', icon: <SiTailwindcss size={40} /> },
-    { name: 'HTML/CSS', icon: <FaHtml5 size={40} /> },
-    { name: 'Streamlit', icon: <SiStreamlit size={40} /> },
+    {
+        title: "Languages",
+        skills: [
+            { name: 'Java', icon: <FaJava size={40} /> },
+            { name: 'Python', icon: <FaPython size={40} /> },
+            { name: 'C#', icon: <SiDotnet size={40} /> },
+            { name: 'Kotlin', icon: <SiKotlin size={40} /> },
+        ]
+    },
+    {
+        title: "Backend & Databases",
+        skills: [
+            { name: 'Spring Boot', icon: <SiSpringboot size={40} /> },
+            { name: 'ASP .NET Core', icon: <SiDotnet size={40} /> },
+            { name: 'FastAPI', icon: <SiFastapi size={40} /> },
+            { name: 'Flask', icon: <SiFlask size={40} /> },
+            { name: 'Django', icon: <SiDjango size={40} /> },
+            { name: 'PostgreSQL', icon: <SiPostgresql size={40} /> },
+            { name: 'MongoDB', icon: <SiMongodb size={40} /> },
+        ]
+    },
+    {
+        title: "Cloud & DevOps",
+        skills: [
+            { name: 'Docker', icon: <FaDocker size={40} /> },
+            { name: 'Kubernetes', icon: <SiKubernetes size={40} /> },
+            { name: 'AWS', icon: <FaAws size={40} /> },
+            { name: 'Azure', icon: <VscAzure size={40} /> },
+            { name: 'Git', icon: <FaGit size={40} /> },
+            { name: 'GitHub Actions', icon: <SiGithubactions size={40} /> },
+            { name: 'Apache Kafka', icon: <SiApachekafka size={40} /> },
+            { name: 'Apache Spark', icon: <SiApachespark size={40} /> },
+            { name: 'Apache Flink', icon: <SiApacheflink size={40} /> },
+        ]
+    },
+    {
+        title: "AI / ML",
+        skills: [
+            { name: 'LangChain', icon: <SiLangchain size={40} /> },
+            { name: 'TensorFlow', icon: <SiTensorflow size={40} /> },
+            { name: 'PyTorch', icon: <SiPytorch size={40} /> },
+            { name: 'PyTorch Geometric', icon: <SiPytorch size={40} /> },
+            { name: 'Scikit-Learn', icon: <SiScikitlearn size={40} /> },
+        ]
+    },
+    {
+        title: "Frontend",
+        skills: [
+            { name: 'React', icon: <FaReact size={40}/>},
+            { name: 'Tailwind', icon: <SiTailwindcss size={40} /> },
+            { name: 'HTML/CSS', icon: <FaHtml5 size={40} /> },
+            { name: 'Streamlit', icon: <SiStreamlit size={40} /> },
+        ]
+    }
 ];
 
 export const projectsData = [
@@ -86,7 +100,7 @@ export const projectsData = [
         description: "Azure-RAG-System is a .NET 8 web application that implements a Retrieval-Augmented Generation (RAG) architecture. It leverages Azure's robust AI ecosystem to provide intelligent, context-aware responses to user queries.",
         link: 'https://github.com/davidhristov59/Azure-RAG-System',
         image: azureImg,
-        tags: ['ASP.NET Core', 'Azure Cloud', 'Azure App Services', 'Cosmos DB', 'Azure OpenAI', 'Azure Cognitive Search', 'Github Actions'],
+        tags: ['ASP.NET Core', 'Azure App Services', 'Cosmos DB', 'Azure OpenAI', 'Azure Cognitive Search', 'Azure Blob Storage', 'Github Actions'],
         website: 'https://azure-rag-platform-gudwa2bjhehme5hf.italynorth-01.azurewebsites.net'
     },
      {
@@ -159,7 +173,6 @@ export const educationData = [
             'Data Science',
             'Artificial Intelligence',
             'DevOps (CI/CD)',
-            'Service-Oriented Architectures',
             'Databases',
             'Advanced Programming',
             'Probability & Statistics'
