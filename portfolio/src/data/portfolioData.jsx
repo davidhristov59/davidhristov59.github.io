@@ -199,11 +199,22 @@ export const certificationsData = [
     },
 ];
 
+export const interestsData = [
+    'Knowledge Graphs & Semantic Web',
+    'Machine Learning',
+    'Artificial Inteligence',
+    'Graph Theory',
+    'Big Data',
+    'Cloud-Native Architectures & DevOps',
+    'Microservices & Event-Driven Systems'
+];
+
 export const navLinks = [
     { href: '#experience', text: 'Experience' },
     { href: '#projects', text: 'Projects' },
     { href: '#skills', text: 'Skills' },
     { href: '#education', text: 'Education' },
+    { href: '#interests', text: 'Interests' },
     { href: '#certifications', text: 'Certifications' },
     { href: '#contact', text: 'Contact' },
 ];
