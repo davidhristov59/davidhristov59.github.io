@@ -1,8 +1,25 @@
-import React, { memo } from 'react';
+import React, { memo, useState, useMemo } from 'react';
 import { ExternalLink } from 'lucide-react';
 import { projectsData } from '../data/portfolioData';
 
 const ProjectsSection = memo(() => {
+    const [activeFilter, setActiveFilter] = useState('All');
+
+    const filterCategories = useMemo(() => {
+        const categories = new Set();
+        projectsData.forEach(p => {
+            p.category.forEach(c => categories.add(c));
+        });
+        return ['All', ...Array.from(categories)];
+    }, []);
+
+    const filteredProjects = useMemo(() => {
+        if (activeFilter === 'All') {
+            return projectsData;
+        }
+        return projectsData.filter(project => project.category.includes(activeFilter));
+    }, [activeFilter]);
+
     return (
         <section
             id="projects"
@@ -12,15 +29,31 @@ const ProjectsSection = memo(() => {
                 <h2 className="text-4xl font-bold text-center mb-4 text-slate-900 dark:text-white">
                     My Projects<span className="text-blue-600">.</span>
                 </h2>
-                <p className="text-center text-slate-600 dark:text-slate-300 mb-16 max-w-2xl mx-auto">
+                <p className="text-center text-slate-600 dark:text-slate-300 mb-12 max-w-2xl mx-auto">
                     A collection of projects showcasing my passion for intelligent
                     systems, AI-driven solutions, and scalable software architecture.
                 </p>
 
+                <div className="flex justify-center flex-wrap gap-2 md:gap-4 mb-12">
+                    {filterCategories.map(category => (
+                        <button
+                            key={category}
+                            onClick={() => setActiveFilter(category)}
+                            className={`px-4 py-2 text-sm md:text-base font-semibold rounded-full transition-all duration-300 transform hover:scale-105 ${
+                                activeFilter === category
+                                    ? 'bg-blue-600 text-white shadow-lg'
+                                    : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-600'
+                            }`}
+                        >
+                            {category}
+                        </button>
+                    ))}
+                </div>
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                    {projectsData.map((project, index) => (
+                    {filteredProjects.map((project, index) => (
                         <div
-                            key={index}
+                            key={`${project.title}-${index}`}
                             className="group overflow-hidden rounded-2xl bg-slate-50 dark:bg-slate-800 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col h-full"
                         >
                             {project.image && (

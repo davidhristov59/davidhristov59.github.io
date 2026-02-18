@@ -34,11 +34,11 @@ const HeroSection = memo(() => {
                 </div>
 
                 <p className="text-xl md:text-2xl mb-6 font-medium text-slate-700 dark:text-slate-200">
-                    I build intelligent, scalable systems for knowledge-driven applications.
+                    Connecting high-performance systems with intelligent, data-driven applications.
                 </p>
 
                 <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 mt-4 mb-12 max-w-3xl mx-auto">
-                    Passionate about <span className="text-blue-600 dark:text-blue-400 font-semibold">AI</span>, <span className="text-blue-600 dark:text-blue-400 font-semibold">Machine Learning</span>, and creating innovative software solutions that make a difference.
+                    Passionate about <span className="text-blue-600 dark:text-blue-400 font-semibold">building scalable systems</span>, <span className="text-blue-600 dark:text-blue-400 font-semibold">crafting robust solutions</span>, and driving innovation in software engineering.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                     <a

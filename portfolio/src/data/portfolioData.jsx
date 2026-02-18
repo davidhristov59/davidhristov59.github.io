@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaPython, FaJava, FaDocker, FaGit, FaReact, FaAws, FaHtml5 } from 'react-icons/fa';
+import { FaPython, FaJava, FaDocker, FaGit, FaReact, FaAws, FaHtml5, FaToolbox } from 'react-icons/fa';
 import { SiSpringboot, SiKubernetes, SiPostgresql, SiMongodb,SiLangchain, SiTensorflow, SiDotnet,SiHuggingface, SiTailwindcss, SiPytorch, SiApacheflink, SiDjango, SiFlask, SiStreamlit, SiKotlin, SiApachekafka, SiFastapi, SiScikitlearn, SiApachespark, SiGithubactions } from 'react-icons/si';
 import { VscAzure } from 'react-icons/vsc';
 import { Shield } from 'lucide-react';
@@ -80,20 +80,23 @@ export const projectsData = [
         link: 'https://github.com/davidhristov59/visualKGQA',
         tags: ['Semantic Web', 'RDF/OWL', 'Java', 'Spring Boot', 'Apache Jena', 'React', 'D3.js'],
         image: radial,
+        category: ['AI / Machine Learning', 'Web Development']
     },
      {  
         title: 'Hybrid Privacy-Preserving RAG – Secure Edge-Cloud AI System',
         description: 'Hybrid RAG system that enables the secure use of Cloud-based LLMs without exposing sensitive data by utilizing a Split Inference architecture, the system ensures that personally identifiable information (PII) is masked locally before being sent to the cloud for processing.',
         link: 'https://github.com/davidhristov59/Hybrid-Privacy-Preserving-RAG-via-Edge-Cloud-Split-Inference',
         image: nlpImg2,
-        tags: ['Python', 'NLP', 'Spacy NER', 'FAISS', 'Hybrid RAG', 'Edge Computing' ,'Split-Inference Architecture', 'PIII Masking', 'LangChain', 'FastAPI']
+        tags: ['Python', 'NLP', 'Spacy NER', 'FAISS', 'Hybrid RAG', 'Edge Computing' ,'Split-Inference Architecture', 'PIII Masking', 'LangChain', 'FastAPI'],
+        category: ['AI / Machine Learning']
     },
     {
         title: 'Real-Time Cascading Failure Detection and Prevention System for Smart Grids',
         description: 'An early warning system that detects cascading failures in smart grid networks using graph-based analysis, Apache Flink stream processing, and real-time simulation.',
         link: 'https://github.com/davidhristov59/Real-Time-Cascading-Failure-Detection-System',
         image: rudarenjeImg,
-        tags: ['Apache Flink', 'Apache Spark', 'Apache Kafka', 'Graph Analysis', 'Docker', 'FastAPI']
+        tags: ['Apache Flink', 'Apache Spark', 'Apache Kafka', 'Graph Analysis', 'Docker', 'FastAPI'],
+        category: ['Distributed Systems & Real-Time Data']
     },
     {
         title: 'Azure AI Assistant',
@@ -101,28 +104,32 @@ export const projectsData = [
         link: 'https://github.com/davidhristov59/Azure-RAG-System',
         image: azureImg,
         tags: ['ASP.NET Core', 'Azure App Services', 'Cosmos DB', 'Azure OpenAI', 'Azure Cognitive Search', 'Azure Blob Storage', 'Github Actions'],
-        website: 'https://azure-rag-platform-gudwa2bjhehme5hf.italynorth-01.azurewebsites.net'
+        website: 'https://azure-rag-platform-gudwa2bjhehme5hf.italynorth-01.azurewebsites.net',
+        category: ['AI / Machine Learning', 'Cloud & DevOps']
     },
      {
         title: 'Task Management System Microservice',
         description: 'A distributed Task Management System built with Domain-Driven Design (DDD) and CQRS/Event Sourcing principles. Features a microservices architecture using Spring Boot (Kotlin/Java), Axon Framework, and Kafka for event-driven communication, with Keycloak for identity management and Consul for service discovery.',
         link: 'https://github.com/davidhristov59/task-management',
         tags: ['Kotlin', 'Spring Boot', 'Axon (CQRS/ES)', 'Kafka', 'Consul', 'React', 'Keycloak', 'Docker'],
-        image: taskmngmntImg
+        image: taskmngmntImg,
+        category: ['Web Development', 'Cloud & DevOps', 'Distributed Systems & Real-Time Data']
     },
     {
-        title: 'EEG Seizure Prediction with Transformers & ML',
+        title: 'EEG Seizure Prediction using Machine Learning & Deep Learning',
         description: 'Developed a seizure prediction framework combining advanced feature engineering (time, frequency, nonlinear) with Machine Learning classifiers and a Transformer-based Deep Learning architecture for end-to-end sequence learning on multi-channel EEG data.',
         link: 'https://github.com/davidhristov59/eeg-epilepsy-seizure-classification',
         tags: ['Python', 'PyTorch', 'Transformers', 'PyEEG', 'MNE', 'Signal Processing', 'Scikit-Learn'],
-        image: eegImg
+        image: eegImg,
+        category: ['AI / Machine Learning']
     },
     {
         title: 'Cloud-Native Movie Management System with full CI/CD workflow',
         description: 'This project demonstrates modern containerization, orchestration, CI/CD pipelines, and cloud deployment practices through a practical movie exploration and management system.',
         link: 'https://github.com/davidhristov59/Movie-Management-System',
         tags: ['Kubernetes (k3d)','AWS EC2', 'MongoDB', 'Flask', 'Streamlit', 'Docker', 'GitHub Actions'],
-        image: movieImg
+        image: movieImg,
+        category: ['Cloud & DevOps']
     },
     {
         title: 'Macedonian Stock Exchange Predictor',
@@ -130,7 +137,8 @@ export const projectsData = [
         link: 'https://github.com/davidhristov59/Macedonian-Stock-Exchange-Prediction',
         image: mseImg,
         tags: ['Python', 'Flask', 'Docker', 'Azure Cloud', 'BeautifulSoup', 'Scikit-Learn'],
-        website: 'https://msepredictions-cqb0d5b7e4cyc4ar.westeurope-01.azurewebsites.net'
+        website: 'https://msepredictions-cqb0d5b7e4cyc4ar.westeurope-01.azurewebsites.net',
+        category: ['Web Development', 'AI / Machine Learning']
     },
     {
         title: 'FitForge',
@@ -138,6 +146,7 @@ export const projectsData = [
         link: 'https://github.com/davidhristov59/FitForge',
         image: fitforgeImg,
         tags: ['C#', 'ASP.NET Core', 'Entity Framework', 'SQL Server', 'Bootstrap', 'MVC'],
+        category: ['Web Development']
     },
     {
         title: 'Optical Flow Motion Tracking',
@@ -145,6 +154,7 @@ export const projectsData = [
         link: 'https://github.com/davidhristov59/Calculating-Optical-Flow',
         image: opticalflowImg,
         tags: ['Python', 'OpenCV', 'Computer Vision', 'NumPy', 'Image Processing'],
+        category: ['Computer Vision']
     }
 ];
 
