@@ -76,7 +76,7 @@ export const skillsData = [
 export const projectsData = [
     {
         title: 'Visual QA for Multi-hop in Knowledge Graphs',
-        description: "Designed a full-stack system for large-scale knowledge graph exploration where it's used Visual Question Answering using LLM-based entity linking and SPARQL query generation. Developed RESTful APIs for ontology ingestion and created interactive D3.js visualizations with aging-based node shading and reasoning path highlighting.",
+        description: "Designed a full-stack system for large-scale knowledge graph exploration where it's used Visual Question Answering using LLM-based entity linking and SPARQL query generation. Developed RESTful APIs for ontology ingestion (RDF/OWL, Turtle, JSON-LD) and created interactive D3.js visualizations with aging-based node shading and reasoning path highlighting.",
         link: 'https://github.com/davidhristov59/visualKGQA',
         tags: ['Semantic Web', 'RDF/OWL', 'Java', 'Spring Boot', 'Apache Jena', 'React', 'D3.js'],
         image: radial,
