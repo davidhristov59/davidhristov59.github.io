@@ -92,10 +92,10 @@ export const projectsData = [
     },
     {
         title: 'Real-Time Cascading Failure Detection and Prevention System for Smart Grids',
-        description: 'An early warning system that detects cascading failures in smart grid networks using graph-based analysis, Apache Flink stream processing, and real-time simulation.',
+        description: 'An early warning system that detects cascading failures in smart grid networks using graph-based analysis and web sockets, Apache Flink stream processing, and real-time simulation.',
         link: 'https://github.com/davidhristov59/Real-Time-Cascading-Failure-Detection-System',
         image: rudarenjeImg,
-        tags: ['Apache Flink', 'Apache Spark', 'Apache Kafka', 'Graph Analysis', 'Docker', 'FastAPI'],
+        tags: ['Apache Flink', 'Apache Spark', 'Apache Kafka', 'Graph Analysis', 'Docker', 'FastAPI', 'Web Sockets'],
         category: ['Distributed Systems & Real-Time Data']
     },
     {
