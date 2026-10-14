@@ -2,13 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Palette tokens (RGB channels, used via tailwind.config.js). */
+:root {
+    --bg: 246 244 239;            /* #F6F4EF warm off-white */
+    --surface: 255 255 255;       /* #FFFFFF */
+    --ink: 20 20 20;              /* #141414 */
+    --muted: 92 90 85;            /* #5C5A55 */
+    --line: 226 222 214;          /* #E2DED6 */
+    --accent: 194 65 12;          /* #C2410C burnt orange */
+    --accent-strong: 154 52 18;   /* #9A3412 hover */
+}
+
+.dark {
+    --bg: 22 21 19;               /* #161513 warm charcoal */
+    --surface: 30 29 26;          /* #1E1D1A */
+    --ink: 236 233 226;           /* #ECE9E2 */
+    --muted: 156 151 141;         /* #9C978D */
+    --line: 46 44 40;             /* #2E2C28 */
+    --accent: 240 138 75;         /* #F08A4B */
+    --accent-strong: 245 161 112; /* #F5A170 hover */
+}
+
 :root {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
-    color-scheme: light dark;
-    color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
+    color: rgb(var(--ink));
+    background-color: rgb(var(--bg));
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -25,11 +45,11 @@ body {
 
 a {
     font-weight: 500;
-    color: #646cff;
+    color: rgb(var(--accent));
     text-decoration: inherit;
 }
 a:hover {
-    color: #535bf2;
+    color: rgb(var(--accent-strong));
 }
 
 h1 {
@@ -44,29 +64,16 @@ button {
     font-size: 1em;
     font-weight: 500;
     font-family: inherit;
-    background-color: #1a1a1a;
+    background-color: rgb(var(--surface));
     cursor: pointer;
     transition: border-color 0.25s;
 }
 button:hover {
-    border-color: #646cff;
+    border-color: rgb(var(--accent));
 }
 button:focus,
 button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-    :root {
-        color: #213547;
-        background-color: #ffffff;
-    }
-    a:hover {
-        color: #747bff;
-    }
-    button {
-        background-color: #f9f9f9;
-    }
 }
 
 /* Custom Animations & Styles */
@@ -100,19 +107,6 @@ button:focus-visible {
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     }
 
-    .gradient-text {
-        background: linear-gradient(135deg, #f59e0b, #d97706, #92400e);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-    .dark .gradient-text {
-        background: linear-gradient(135deg, #fbbf24, #f59e0b, #d97706);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-
     .shake {
         animation: shake 0.5s ease-in-out;
     }
@@ -140,10 +134,10 @@ button:focus-visible {
 
 @keyframes glow {
     0%, 100% {
-        box-shadow: 0 0 5px rgba(245, 158, 11, 0.5);
+        box-shadow: 0 0 5px rgb(var(--accent) / 0.5);
     }
     50% {
-        box-shadow: 0 0 20px rgba(245, 158, 11, 0.8), 0 0 30px rgba(245, 158, 11, 0.6);
+        box-shadow: 0 0 20px rgb(var(--accent) / 0.8), 0 0 30px rgb(var(--accent) / 0.6);
     }
 }
 
@@ -151,10 +145,4 @@ button:focus-visible {
     0%, 100% { transform: translateX(0); }
     25% { transform: translateX(-5px); }
     75% { transform: translateX(5px); }
-}
-
-/* Dark theme overrides */
-.dark body {
-    background-color: #094243;
-    color: #fae6b1;
 }

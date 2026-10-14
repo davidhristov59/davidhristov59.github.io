@@ -4,6 +4,7 @@ import { ChevronUp } from 'lucide-react';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import ExperienceSection from './components/ExperienceSection';
+import PublicationsSection from './components/PublicationsSection';
 import ProjectsSection from './components/ProjectsSection';
 import SkillsSection from './components/SkillsSection';
 import EducationSection from './components/EducationSection';
@@ -17,13 +18,13 @@ const Portfolio = () => {
     const [isDarkMode, setIsDarkMode] = useState(() => {
         if (typeof window !== 'undefined') {
             const savedMode = localStorage.getItem('darkMode');
-            // If no saved preference, default to false (light mode)
-            return savedMode === 'true';
+            // No saved preference: open in dark mode. An explicit toggle is remembered.
+            return savedMode !== 'false';
         }
         return false;
     });
     const [showScrollTop, setShowScrollTop] = useState(false);
-    const [isVisible, setIsVisible] = useState({});
+    const [, setIsVisible] = useState({});
     const [activeSection, setActiveSection] = useState('');
     const [isLoading, setIsLoading] = useState(true);
 
@@ -39,7 +40,7 @@ const Portfolio = () => {
             }));
         });
 
-        const sections = ['experience', 'projects', 'skills', 'education', 'interests', 'certifications', 'contact'];
+        const sections = ['experience', 'publications', 'projects', 'skills', 'education', 'interests', 'certifications', 'contact'];
         let currentSection = '';
 
         sections.forEach((section) => {
@@ -82,12 +83,16 @@ const Portfolio = () => {
     }, []);
 
     if (isLoading) {
-        return <LoadingSpinner />;
+        return (
+            <div className={isDarkMode ? 'dark' : ''}>
+                <LoadingSpinner />
+            </div>
+        );
     }
 
     return (
         <div className={isDarkMode ? 'dark' : ''}>
-            <div className="min-h-screen bg-white dark:bg-[#094243] text-gray-900 dark:text-white transition-colors duration-200">
+            <div className="min-h-screen bg-bg text-ink transition-colors duration-200">
                 <Suspense fallback={<LoadingSpinner />}>
                     <Navbar
                         isDarkMode={isDarkMode}
@@ -96,6 +101,7 @@ const Portfolio = () => {
                     />
                     <HeroSection />
                     <ExperienceSection />
+                    <PublicationsSection />
                     <ProjectsSection />
                     <SkillsSection />
                     <EducationSection />
@@ -106,7 +112,7 @@ const Portfolio = () => {
                     {showScrollTop && (
                         <button
                             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                            className="fixed bottom-8 right-8 p-3 bg-yellow-600 text-white rounded-full shadow-lg hover:bg-yellow-700 transition-all duration-300 transform hover:scale-110 animate-glow z-50"
+                            className="fixed bottom-8 right-8 p-3 bg-accent text-white rounded-full shadow-lg hover:bg-accent-strong transition-all duration-300 transform hover:scale-110 animate-glow z-50"
                             aria-label="Scroll to top"
                         >
                             <ChevronUp size={24} />
