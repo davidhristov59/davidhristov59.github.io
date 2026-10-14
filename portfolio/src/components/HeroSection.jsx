@@ -136,11 +136,6 @@ const HeroSection = memo(() => {
                         linear-gradient(90deg, rgb(var(--line) / 0.5) 1px, transparent 1px);
                 }
 
-                .hero-glow {
-                    background: radial-gradient(600px circle at var(--glow-x, 50%) var(--glow-y, 50%),
-                        rgb(var(--accent) / 0.05), transparent 60%);
-                }
-
                 .code-block {
                     background: rgb(var(--surface) / 0.7);
                     border: 1px solid rgb(var(--line));
@@ -187,15 +182,6 @@ const HeroSection = memo(() => {
 
             {/* Grid pattern background */}
             <div className="hero-grid absolute inset-0" />
-
-            {/* Mouse-following glow */}
-            <div
-                className="hero-glow absolute inset-0 transition-all duration-700 ease-out pointer-events-none"
-                style={{
-                    '--glow-x': `${50 + mousePos.x * 2}%`,
-                    '--glow-y': `${50 + mousePos.y * 2}%`,
-                }}
-            />
 
             {/* Decorative corner accents */}
             <div className="absolute top-0 left-0 w-64 h-64 opacity-[0.03]">
