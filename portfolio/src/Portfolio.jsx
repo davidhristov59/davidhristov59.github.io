@@ -6,6 +6,7 @@ import HeroSection from './components/HeroSection';
 import ExperienceSection from './components/ExperienceSection';
 import PublicationsSection from './components/PublicationsSection';
 import ProjectsSection from './components/ProjectsSection';
+import OpenSourceSection from './components/OpenSourceSection';
 import SkillsSection from './components/SkillsSection';
 import EducationSection from './components/EducationSection';
 import InterestsSection from './components/InterestsSection';
@@ -40,7 +41,7 @@ const Portfolio = () => {
             }));
         });
 
-        const sections = ['experience', 'publications', 'projects', 'skills', 'education', 'interests', 'certifications', 'contact'];
+        const sections = ['experience', 'education', 'publications', 'projects', 'open-source', 'skills', 'interests', 'certifications', 'contact'];
         let currentSection = '';
 
         sections.forEach((section) => {
@@ -101,10 +102,11 @@ const Portfolio = () => {
                     />
                     <HeroSection />
                     <ExperienceSection />
+                    <EducationSection />
                     <PublicationsSection />
                     <ProjectsSection />
+                    <OpenSourceSection />
                     <SkillsSection />
-                    <EducationSection />
                     <InterestsSection />
                     <CertificationsSection />
                     <ContactSection />

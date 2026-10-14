@@ -4,7 +4,7 @@ import { interestsData } from '../data/portfolioData';
 
 const InterestsSection = memo(() => {
     return (
-        <section id="interests" className="py-20 bg-surface transition-colors duration-200">
+        <section id="interests" className="py-20 bg-bg transition-colors duration-200">
             <div className="container mx-auto px-4">
                 <h2 className="text-4xl font-bold text-center mb-16 text-ink">
                     Fields of Interest<span className="text-accent">.</span>

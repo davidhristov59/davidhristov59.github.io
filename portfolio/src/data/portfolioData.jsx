@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaPython, FaJava, FaDocker, FaGit, FaReact, FaAws, FaRobot, FaDatabase, FaBrain, FaChartLine } from 'react-icons/fa';
-import { SiSpringboot, SiKubernetes, SiPostgresql, SiMongodb, SiMysql, SiLangchain, SiLanggraph, SiModelcontextprotocol, SiSpacy, SiPydantic, SiTensorflow, SiDotnet, SiHuggingface, SiPytorch, SiNumpy, SiPandas, SiApacheflink, SiStreamlit, SiKotlin, SiApachekafka, SiFastapi, SiScikitlearn, SiApachespark, SiGithubactions, SiJenkins, SiMlflow, SiLinux, SiPostman, SiNvidia } from 'react-icons/si';
+import { SiSpringboot, SiKubernetes, SiPostgresql, SiMongodb, SiMysql, SiLangchain, SiLanggraph, SiModelcontextprotocol, SiSpacy, SiPydantic, SiTensorflow, SiDotnet, SiHuggingface, SiPytorch, SiNumpy, SiPandas, SiApacheflink, SiStreamlit, SiKotlin, SiApachekafka, SiFastapi, SiScikitlearn, SiApachespark, SiGithubactions, SiJenkins, SiMlflow, SiLinux, SiPostman, SiNvidia, SiSwift } from 'react-icons/si';
 import { VscAzure } from 'react-icons/vsc';
 import { Shield } from 'lucide-react';
 
@@ -33,6 +33,7 @@ export const skillsData = [
             { name: 'Java', icon: <FaJava size={40} /> },
             { name: 'Kotlin', icon: <SiKotlin size={40} /> },
             { name: 'C#', icon: <SiDotnet size={40} /> },
+            { name: 'Swift', icon: <SiSwift size={40} /> },
         ]
     },
     {
@@ -126,19 +127,19 @@ export const projectsData = [
         title: 'Multi-tier Router – A Compliance-Aware Cost Optimizer for LLMs',
         description: 'A multi-tier LLM query router on AWS that sends each query to a deterministic, fast, strong or isolated private tier, using Titan embeddings with S3 Vectors for route matching. The private tier for sensitive queries runs on ECS Fargate in an isolated subnet with no internet route (local embeddings, FAISS retrieval and a local Gemma model, reachable only through VPC endpoints), while the cloud tiers share RAG over a Bedrock Knowledge Base. An evaluation pipeline with Step Functions (Distributed Map) and Lambda benchmarks queries across tiers and uses an LLM judge to find the best tier per query.',
         tags: ['AWS', 'Amazon Bedrock', 'ECS Fargate', 'S3 Vectors', 'Step Functions', 'Lambda', 'FAISS', 'Gemma', 'LLM-as-Judge'],
-        category: ['AI / Machine Learning', 'Cloud & DevOps']
+        category: ['AI / Machine Learning', 'NLP & LLMs', 'Cloud & DevOps']
     },
     {
         title: 'Cross-Check – Multi-Agent Research Verifier',
         description: 'A multi-agent system that verifies technical claims by cross-checking a paper knowledge base against live web search, with a lead agent drafting an evidence-backed verdict. A critic agent rejects unsupported claims and sends drafts back for revision, with a debate round whenever sources disagree. The RAG pipeline was evaluated on retrieval recall, showing that grounding reduces hallucinations. Includes persistent memory of past verdicts, full observability with Langfuse tracing and a live UI that streams each agent\'s progress.',
         tags: ['Multi-Agent Systems', 'RAG', 'Web Search', 'Langfuse', 'LLM Evaluation'],
-        category: ['AI / Machine Learning']
+        category: ['AI / Machine Learning', 'NLP & LLMs']
     },
     {
         title: 'Multi-Topic LLM Fine-Tuning with LoRA',
-        description: 'Fine-tuned Qwen2.5-1.5B on GSM8K math reasoning with rank ablations, baseline comparisons and catastrophic-forgetting checks, scored by an LLM-as-judge pipeline with bias detection. Trained a single LoRA adapter jointly across four domains (math, code, logic, biology), raising code accuracy from 0% to 52% and improving logic and biology by 6–8 points; identified negative transfer on math (about a 10-point drop) and cut training time from 4 hours to 1 hour per run by restructuring gradient accumulation.',
-        tags: ['LoRA / PEFT', 'Qwen2.5', 'GSM8K', 'LLM-as-Judge', 'PyTorch'],
-        category: ['AI / Machine Learning']
+        description: 'Implemented SVD-based low-rank analysis and a LoRALinear layer from scratch, then fine-tuned Qwen2.5-1.5B-Instruct on GSM8K with Unsloth, with a rank ablation (r = 4–32), baselines, error analysis, an LLM-as-judge with bias checks and catastrophic-forgetting checks. Trained a single LoRA jointly on 4 topics (math, code, logic, biology; 22.4k examples) on Qwen3-0.6B to test whether joint training plus Model Soup can compete with per-topic specialists: code rose from 0% to 52% exact match, logic +6–8 and biology +7 points, at a cost of ~9–12 points on math (negative transfer). Restructuring gradient accumulation cut each run from ~4 hours to ~1 hour.',
+        tags: ['LoRA / PEFT', 'Qwen2.5', 'Qwen3', 'Unsloth', 'GSM8K', 'Model Soup', 'LLM-as-Judge', 'PyTorch'],
+        category: ['AI / Machine Learning', 'NLP & LLMs']
     },
     {
         title: 'Visual QA for Multi-hop in Knowledge Graphs',
@@ -147,7 +148,7 @@ export const projectsData = [
         tags: ['Semantic Web', 'RDF/OWL', 'Java', 'Spring Boot', 'Apache Jena', 'React', 'D3.js'],
         image: radial,
         imageSrcSet: srcSet(radial, radial2x),
-        category: ['AI / Machine Learning', 'Web Development']
+        category: ['AI / Machine Learning', 'NLP & LLMs', 'Web Development']
     },
      {  
         title: 'Hybrid Privacy-Preserving RAG – Secure Edge-Cloud AI System',
@@ -156,7 +157,7 @@ export const projectsData = [
         image: nlpImg2,
         imageSrcSet: srcSet(nlpImg2, nlpImg2x),
         tags: ['Python', 'NLP', 'Spacy NER', 'FAISS', 'Hybrid RAG', 'Edge Computing' ,'Split-Inference Architecture', 'PIII Masking', 'LangChain', 'FastAPI'],
-        category: ['AI / Machine Learning']
+        category: ['AI / Machine Learning', 'NLP & LLMs']
     },
     {
         title: 'Real-Time Cascading Failure Detection and Prevention System for Smart Grids',
@@ -175,7 +176,56 @@ export const projectsData = [
         imageSrcSet: srcSet(azureImg, azureImg2x),
         tags: ['ASP.NET Core', 'Azure App Services', 'Cosmos DB', 'Azure OpenAI', 'Azure Cognitive Search', 'Azure Blob Storage', 'Github Actions'],
         website: 'https://azure-rag-platform-gudwa2bjhehme5hf.italynorth-01.azurewebsites.net',
-        category: ['AI / Machine Learning', 'Cloud & DevOps']
+        category: ['AI / Machine Learning', 'NLP & LLMs', 'Cloud & DevOps']
+    },
+    {
+        title: 'Skillio AI – Recruitment System for Public Administration',
+        description: 'Recruitment platform that automatically screens and ranks CVs for public-sector roles. A FastAPI backend extracts text from PDF/DOCX uploads, uses gpt-4o-mini to pull structured skills, experience and education, and embeds CVs and job postings with text-embedding-3-small into PostgreSQL with pgvector, where cosine similarity gives each candidate a match score and a recommended/rejected flag. HR admins review ranked candidates in a React + TypeScript dashboard secured with JWT, bcrypt and token blacklisting, all orchestrated with Docker Compose.',
+        // TODO: add link once the repo is public (currently private).
+        tags: ['FastAPI', 'React', 'TypeScript', 'PostgreSQL', 'pgvector', 'OpenAI', 'Embeddings', 'JWT', 'Docker'],
+        category: ['AI / Machine Learning', 'NLP & LLMs', 'Web Development']
+    },
+    {
+        title: 'MCP Semantic Search on Bedrock AgentCore',
+        description: 'FastMCP server for semantic search over 10 foundational ML papers (Transformer, ResNet, BERT, Adam and others). Ingestion chunks PDFs from S3, embeds them with Amazon Titan Embed v2 (1024 dimensions) and stores them in Amazon S3 Vectors (cosine distance). The server runs as an ARM64 multi-stage Docker image in ECR, deployed with AWS CDK (TypeScript) to Bedrock AgentCore Runtime, with a least-privilege IAM role scoped to one model and one vector index, IAM/SigV4 authentication and an isolated microVM per session. For every test query the top result came from the correct paper (e.g. the dropout query at cosine distance 0.20).',
+        tags: ['FastMCP', 'Amazon Bedrock AgentCore', 'Titan Embeddings', 'S3 Vectors', 'AWS CDK', 'ECR', 'Docker', 'IAM'],
+        category: ['AI / Machine Learning', 'NLP & LLMs', 'Cloud & DevOps']
+    },
+    {
+        title: 'NLP Support Triage Assistant (Banking77)',
+        description: 'Support-routing system that sorts banking customer messages into 6 queues (grouped from 77 intents), comparing TF-IDF + Logistic Regression (trained on 10.4k examples) against a quantized zero-shot BART-Large-MNLI. TF-IDF reached 91.2% validation accuracy (0.917 macro-F1) at under 1 ms latency vs. 48% zero-shot, showing the value of in-domain training. Guardrails flag messages for human review on low confidence, model disagreement or high-risk words like "fraud", and predictions are explained through TF-IDF word coefficients.',
+        tags: ['Scikit-Learn', 'TF-IDF', 'BART-MNLI', 'Zero-Shot', 'Quantization', 'Guardrails'],
+        category: ['AI / Machine Learning', 'NLP & LLMs']
+    },
+    {
+        title: 'CIFAR-100 Classification System',
+        description: 'Production-style multi-container app serving CNN and ResNet models trained on CIFAR-100: FastAPI, Streamlit, MongoDB (async motor) and MinIO, with multi-stage Docker builds and health-checked orchestration. Supports single and batch/ZIP inference, side-by-side model comparison, thread-safe Grad-CAM heatmaps, and a human-in-the-loop feedback loop with per-model accuracy tracking and CSV export for retraining. Models load once at startup and inference runs in a thread pool to keep the API responsive.',
+        tags: ['FastAPI', 'Streamlit', 'MongoDB', 'MinIO', 'Docker', 'Grad-CAM', 'PyTorch'],
+        category: ['AI / Machine Learning', 'Computer Vision', 'Cloud & DevOps']
+    },
+    {
+        title: 'LLM Fundamentals & Semantic Search Lab',
+        description: 'Full-stack interactive lab on the building blocks of LLMs: tokenizer comparison (WordPiece vs. BPE), Word2Vec skip-gram with negative sampling from scratch in NumPy, static vs. contextual embeddings, and GPT-2 decoding strategies with attention heatmaps. Fine-tuned DistilBERT for IMDB sentiment (~92% vs. 88% for a TF-IDF baseline) and built a FAISS + MiniLM semantic search engine over AG News, extended into an end-to-end RAG pipeline.',
+        tags: ['PyTorch', 'Hugging Face', 'DistilBERT', 'Word2Vec', 'FAISS', 'MiniLM', 'RAG'],
+        category: ['AI / Machine Learning', 'NLP & LLMs']
+    },
+    {
+        title: 'Prompt Engineering Benchmark',
+        description: 'Reproducible benchmark of zero-shot, few-shot, chain-of-thought and self-consistency prompting on 200 GSM8K and 200 AG News examples, comparing Llama 3.1 8B vs. 70B on accuracy vs. token cost. Also compared naive JSON, a from-scratch retry loop with error feedback, and Instructor + Pydantic for structured extraction, plus human-written vs. Auto-CoT prompts in a team mini-project. Results are served from FastAPI to a Streamlit dashboard.',
+        tags: ['Llama 3.1', 'LiteLLM', 'Groq', 'OpenRouter', 'Instructor', 'Pydantic', 'FastAPI', 'Streamlit'],
+        category: ['AI / Machine Learning', 'NLP & LLMs']
+    },
+    {
+        title: 'Plain CNN vs. ResNet on CIFAR-100',
+        description: 'Paired study isolating the effect of residual connections: trained a 32-layer VGG-style plain CNN (~470k parameters) from scratch on CIFAR-100 in PyTorch, against a teammate\'s same-size ResNet-32. Three MLflow-tracked experiments (baseline 58.4%, AutoAugment 56.2%, cosine-annealing LR 60.9%) showed how vanishing gradients limit deep plain networks.',
+        tags: ['PyTorch', 'CNNs', 'AutoAugment', 'MLflow'],
+        category: ['AI / Machine Learning', 'Computer Vision']
+    },
+    {
+        title: 'Human Activity Recognition: Classical ML Pipeline',
+        description: 'End-to-end classical ML pipeline classifying 6 human activities from 561 smartphone-sensor features, organized into reusable modules for loading, preprocessing, visualization, analysis and training. Implemented Gaussian Naive Bayes from scratch with log-likelihoods (checked against scikit-learn) and compared 8 models on an MLflow leaderboard; LinearSVC won at ~96% accuracy, and PCA/t-SNE error analysis traced most mistakes to Sitting vs. Standing.',
+        tags: ['Scikit-Learn', 'XGBoost', 'MLflow', 'PCA', 't-SNE'],
+        category: ['AI / Machine Learning']
     },
      {
         title: 'Task Management System Microservice',
@@ -185,6 +235,20 @@ export const projectsData = [
         image: taskmngmntImg,
         imageSrcSet: srcSet(taskmngmntImg, taskmngmntImg2x),
         category: ['Web Development', 'Cloud & DevOps', 'Distributed Systems & Real-Time Data']
+    },
+    {
+        title: 'SplitEase – AI Expense Splitting for iOS',
+        description: 'iOS app for splitting group expenses, built in SwiftUI with SwiftData and MVVM as a team of two. Expenses can be split equally, by exact amounts or by percentage, and group debts are simplified into the fewest settlement payments with a greedy creditor–debtor matching algorithm. Scan-to-split reads receipts with Apple Vision OCR and uses an OpenAI model to extract line items and propose a split; expenses can be pinned on a MapKit map, with spending statistics and XCTest suites for the core logic.',
+        // TODO: add link once the repo is public (currently private).
+        tags: ['Swift', 'SwiftUI', 'SwiftData', 'MVVM', 'Vision OCR', 'OpenAI API', 'MapKit', 'XCTest'],
+        category: ['Mobile Development', 'AI / Machine Learning']
+    },
+    {
+        title: 'PathFinder – GPS Activity Tracker',
+        description: 'React Native (Expo) app for recording GPS activities, with foreground and background location tracking via expo-location and expo-task-manager, live route maps with react-native-maps, and Haversine-based distance and speed stats. Activities are stored offline on-device in SQLite and can be reviewed in a history list and per-activity detail screens; state is managed with Zustand and the UI is styled with NativeWind.',
+        link: 'https://github.com/davidhristov59/pathfinder',
+        tags: ['React Native', 'Expo', 'TypeScript', 'Zustand', 'SQLite', 'react-native-maps', 'NativeWind'],
+        category: ['Mobile Development']
     },
     {
         title: 'EEG Seizure Prediction using Machine Learning & Deep Learning',
@@ -270,6 +334,7 @@ export const educationData = [
         location: 'Skopje, Macedonia',
         status: 'Completed',
         thesis: 'Comparative Analysis over Knowledge Graphs Based on Multi-Hop Reasoning through Path Discovery and Evaluation',
+        thesisGrade: '10/10',
         coursework: [
             'Machine Learning',
             'Natural Language Processing',
@@ -295,6 +360,23 @@ export const publicationsData = [
         authors: ['S. Tagarski', 'D. Hristov', 'M. Poposki', 'S. Andonov', 'G. Madjarov'],
         venue: 'TELFOR 2026, Belgrade',
         status: 'Under review',
+    },
+];
+
+export const openSourceData = [
+    {
+        project: 'nf-core/proteinfold',
+        title: 'DockQ v2 integration',
+        context: 'Built at the nf-core Hackathon, March 2026',
+        description: 'Team contribution to nf-core/proteinfold, a Nextflow pipeline for protein structure prediction.',
+        bullets: [
+            'Built a Nextflow DSL2 module and subworkflow that scores predicted protein complexes against reference structures with DockQ v2, containerised with Docker.',
+            'Added optional reference-structure input to the pipeline\u2019s samplesheet schema, so the top-ranked model from any of 8 prediction modes is scored automatically.',
+            'Fixed Docker runtime issues (deprecated NVIDIA library, cache/permission errors) that kept the Boltz-2 co-folding module from running.',
+        ],
+        tags: ['Nextflow', 'Docker', 'Python', 'Biopython'],
+        // TODO: replace with the PR link once available.
+        link: 'https://github.com/nf-core/proteinfold',
     },
 ];
 
@@ -335,10 +417,11 @@ export const languagesData = [
 
 export const navLinks = [
     { href: '#experience', text: 'Experience' },
+    { href: '#education', text: 'Education' },
     { href: '#publications', text: 'Publications' },
     { href: '#projects', text: 'Projects' },
+    { href: '#open-source', text: 'Open Source' },
     { href: '#skills', text: 'Skills' },
-    { href: '#education', text: 'Education' },
     { href: '#interests', text: 'Interests' },
     { href: '#certifications', text: 'Certifications' },
     { href: '#contact', text: 'Contact' },

@@ -23,7 +23,7 @@ const ProjectsSection = memo(() => {
     return (
         <section
             id="projects"
-            className="py-20 bg-bg transition-colors duration-200"
+            className="py-20 bg-surface transition-colors duration-200"
         >
             <div className="container mx-auto px-4">
                 <h2 className="text-4xl font-bold text-center mb-4 text-ink">
@@ -55,7 +55,7 @@ const ProjectsSection = memo(() => {
                     {filteredProjects.map((project, index) => (
                         <div
                             key={`${project.title}-${index}`}
-                            className="group overflow-hidden rounded-2xl bg-surface shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col h-full"
+                            className="group overflow-hidden rounded-2xl bg-bg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col h-full"
                         >
                             {project.image && (
                                 <div className="relative h-[13.5rem] overflow-hidden flex-shrink-0">

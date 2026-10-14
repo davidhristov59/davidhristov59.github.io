@@ -6,7 +6,7 @@ const OWN_NAME = 'D. Hristov';
 
 const PublicationsSection = memo(() => {
     return (
-        <section id="publications" className="py-20 bg-surface transition-colors duration-200">
+        <section id="publications" className="py-20 bg-bg transition-colors duration-200">
             <div className="container mx-auto px-4">
                 <h2 className="text-4xl font-bold text-center mb-16 text-ink">
                     Publications<span className="text-accent">.</span>
@@ -15,7 +15,7 @@ const PublicationsSection = memo(() => {
                     {publicationsData.map((pub) => (
                         <div
                             key={pub.title}
-                            className="p-6 bg-bg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                            className="p-6 bg-surface rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                         >
                             <div className="flex items-start">
                                 <div className="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mr-4">

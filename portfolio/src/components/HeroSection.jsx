@@ -6,7 +6,7 @@ const ROLES = [
     'Machine Learning',
     'LLMs & Agentic AI',
     'Natural Language Processing',
-    'MLOps on AWS',
+    'MLOps',
     'Knowledge Graphs',
 ];
 
@@ -15,9 +15,9 @@ const ABOUT = {
     name: 'David Hristov',
     role: 'ML & Software Engineer',
     location: 'Skopje, Macedonia',
-    focus: ['Machine Learning', 'LLMs & Agents', 'MLOps on AWS'],
+    focus: ['LLMs & Multi-Agent Systems', 'RAG & Evaluation', 'Knowledge Graphs', 'MLOps'],
     experience: ['ML Intern @ Loka', 'SWE Intern @ Inteligenta'],
-    education: ['MSc Data Science @ FCSE', 'BSc CS & Engineering @ FCSE'],
+    education: ['MSc in Data Science @ FCSE (ongoing)', 'BSc in CS & Engineering @ FCSE'],
     publications: 2,
 };
 

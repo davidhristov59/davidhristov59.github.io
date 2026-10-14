@@ -18,7 +18,7 @@ const TagCloud = ({ coursework }) => {
 
 const EducationSection = memo(() => {
     return (
-        <section id="education" className="py-20 bg-bg transition-colors duration-200">
+        <section id="education" className="py-20 bg-surface transition-colors duration-200">
             <div className="container mx-auto px-4">
                 <h2 className="text-4xl font-bold text-center mb-16 text-ink">
                     Education<span className="text-accent">.</span>
@@ -27,7 +27,7 @@ const EducationSection = memo(() => {
                     {educationData.map((edu, index) => (
                         <div
                             key={index}
-                            className="p-8 bg-surface rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                            className="p-8 bg-bg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
                         >
                             <div className="flex justify-between items-start mb-4">
                                 <div>
@@ -46,10 +46,18 @@ const EducationSection = memo(() => {
                             </div>
                             <p className="text-sm text-muted mb-6">{edu.date}</p>
                             {edu.thesis && (
-                                <p className="text-muted mb-6">
-                                    <span className="font-bold text-ink">Thesis: </span>
-                                    {edu.thesis}
-                                </p>
+                                <div className="mb-6">
+                                    <p className="text-muted">
+                                        <span className="font-bold text-ink">Thesis: </span>
+                                        {edu.thesis}
+                                    </p>
+                                    {edu.thesisGrade && (
+                                        <p className="text-muted mt-2">
+                                            <span className="font-bold text-ink">Grade: </span>
+                                            <span className="font-semibold text-accent">{edu.thesisGrade}</span>
+                                        </p>
+                                    )}
+                                </div>
                             )}
                             {edu.coursework && (
                                 <div>

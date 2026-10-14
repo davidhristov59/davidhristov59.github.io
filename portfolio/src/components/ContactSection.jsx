@@ -3,7 +3,7 @@ import { Mail, Linkedin, Github } from 'lucide-react';
 
 const ContactSection = memo(() => {
     return (
-        <section id="contact" className="py-20 bg-surface transition-colors duration-200">
+        <section id="contact" className="py-20 bg-bg transition-colors duration-200">
             <div className="container mx-auto px-4">
                 <h2 className="text-4xl font-bold text-center mb-4 text-ink">
                     Get In Touch<span className="text-accent">.</span>
@@ -14,7 +14,7 @@ const ContactSection = memo(() => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
                     <a
                         href="mailto:davidhristov10@gmail.com"
-                        className="flex flex-col items-center p-8 bg-bg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
+                        className="flex flex-col items-center p-8 bg-surface rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
                     >
                         <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                             <Mail className="w-8 h-8 text-white" />
@@ -27,7 +27,7 @@ const ContactSection = memo(() => {
                         href="https://www.linkedin.com/in/david-hristov-0985a4176"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex flex-col items-center p-8 bg-bg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
+                        className="flex flex-col items-center p-8 bg-surface rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
                     >
                         <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                             <Linkedin className="w-8 h-8 text-white" />
@@ -40,7 +40,7 @@ const ContactSection = memo(() => {
                         href="https://github.com/davidhristov59"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex flex-col items-center p-8 bg-bg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
+                        className="flex flex-col items-center p-8 bg-surface rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
                     >
                         <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                             <Github className="w-8 h-8 text-white" />
