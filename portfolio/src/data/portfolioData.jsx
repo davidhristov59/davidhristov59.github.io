@@ -142,10 +142,9 @@ export const projectsData = [
         category: ['AI / Machine Learning', 'NLP & LLMs']
     },
     {
-        title: 'Comparative Analysis over Knowledge Graphs Based on Multi-Hop Reasoning through Path Discovery and Evaluation',
-        description: 'My BSc thesis (graded 10/10), built as CogniViz: a platform for exploring RDF/OWL knowledge graphs and making multi-hop reasoning visible. A tool-calling LLM agent (OpenAI or AWS Bedrock via Spring AI) traverses the graph one real hop at a time with backtracking, streamed live over SSE, and each path gets a natural-language explanation with a deterministic faithfulness score. Includes D3 force-directed visualization, shortest/all/weighted pathfinding, natural-language search via LLM-generated SPARQL, and an evaluation harness comparing the agent against a human, a weighted-search algorithm and an ungrounded LLM baseline on a curated SwissLipids multi-hop QA dataset.',
+        title: 'CogniViz – Multi-Hop Reasoning over Knowledge Graphs',
+        description: 'A platform that makes multi-hop reasoning over RDF/OWL knowledge graphs visible. An LLM agent traverses the graph hop by hop and explains each path with a faithfulness score. Users can ask questions in plain language and let the AI resolve the entities via entity linking, search the graph with LLM-generated SPARQL, and find shortest, all or weighted paths. An evaluation harness compares the agent against a human, a weighted-search algorithm and an LLM-only baseline.',
         // TODO: add link once the repo (stefantagarski/cogniviz) is public.
-        status: 'BSc Thesis',
         tags: ['Java 21', 'Spring Boot', 'Spring AI', 'Apache Jena', 'SPARQL', 'LLM Agents', 'AWS Bedrock', 'React', 'D3.js'],
         image: radial,
         imageSrcSet: srcSet(radial, radial2x),
