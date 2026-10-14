@@ -142,10 +142,11 @@ export const projectsData = [
         category: ['AI / Machine Learning', 'NLP & LLMs']
     },
     {
-        title: 'Visual QA for Multi-hop in Knowledge Graphs',
-        description: "Designed a full-stack system for large-scale knowledge graph exploration where it's used Visual Question Answering using LLM-based entity linking and SPARQL query generation. Developed RESTful APIs for ontology ingestion (RDF/OWL, Turtle, JSON-LD) and created interactive D3.js visualizations with aging-based node shading and reasoning path highlighting.",
-        link: 'https://github.com/davidhristov59/visualKGQA',
-        tags: ['Semantic Web', 'RDF/OWL', 'Java', 'Spring Boot', 'Apache Jena', 'React', 'D3.js'],
+        title: 'Comparative Analysis over Knowledge Graphs Based on Multi-Hop Reasoning through Path Discovery and Evaluation',
+        description: 'My BSc thesis (graded 10/10), built as CogniViz: a platform for exploring RDF/OWL knowledge graphs and making multi-hop reasoning visible. A tool-calling LLM agent (OpenAI or AWS Bedrock via Spring AI) traverses the graph one real hop at a time with backtracking, streamed live over SSE, and each path gets a natural-language explanation with a deterministic faithfulness score. Includes D3 force-directed visualization, shortest/all/weighted pathfinding, natural-language search via LLM-generated SPARQL, and an evaluation harness comparing the agent against a human, a weighted-search algorithm and an ungrounded LLM baseline on a curated SwissLipids multi-hop QA dataset.',
+        // TODO: add link once the repo (stefantagarski/cogniviz) is public.
+        status: 'BSc Thesis',
+        tags: ['Java 21', 'Spring Boot', 'Spring AI', 'Apache Jena', 'SPARQL', 'LLM Agents', 'AWS Bedrock', 'React', 'D3.js'],
         image: radial,
         imageSrcSet: srcSet(radial, radial2x),
         category: ['AI / Machine Learning', 'NLP & LLMs', 'Web Development']
